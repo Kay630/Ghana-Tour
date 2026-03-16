@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpg" href="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628247/logo_nhdd5o.png">
+<title>Blog – Ghana Tour | Historical Places & Travel Stories</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+// Ghana Tour – Blog Posts Data
+// Shared between index.html and blog.html
+
+const BLOG_POSTS = [
+  {
+    id: 1,
+    slug: "cape-coast-castle-door-of-no-return",
+    title: "Cape Coast Castle: Walking Through the Door of No Return",
+    category: "Historical",
+    date: "September 28, 2024",
+    author: "Ama Korantema",
+    readTime: "7 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628230/13_q48xc9.png",
+    excerpt: "Few places in the world carry the weight of Cape Coast Castle. Built in 1653, this UNESCO World Heritage Site stands as a haunting reminder of the transatlantic slave trade — and a deeply moving pilgrimage site for millions of people of African descent.",
+    body: `<p>Cape Coast Castle sits on a rocky promontory overlooking the Atlantic Ocean in Ghana's Central Region, its whitewashed walls gleaming in the tropical sun. Built by the Swedish Africa Company in 1653 and later expanded by the British, it became one of the largest slave-holding sites in West Africa — a place where hundreds of thousands of enslaved Africans passed through what became known as the Door of No Return before being shipped across the Atlantic.</p>
+    <p>Today, Cape Coast Castle is a UNESCO World Heritage Site and one of the most visited historical landmarks in Ghana. The dungeon tours are sobering, emotional, and profoundly important. You walk through the narrow, airless holding cells where enslaved men, women, and children were packed together in horrific conditions. You stand at the Door of No Return — the final exit through which enslaved people passed onto ships — and you feel the weight of history pressing down on you.</p>
+    <p>In 2009, President Barack Obama visited Cape Coast Castle with his family, calling it "a reminder of the evil that men do." Countless members of the African diaspora make the pilgrimage every year, seeking connection to their ancestral roots.</p>
+    <p>Adjacent to Cape Coast Castle is Elmina Castle, built by the Portuguese in 1482 — the oldest European building in sub-Saharan Africa. Together, these two fortresses form one of the most historically significant sites on the African continent.</p>
+    <p>Beyond the castles, Cape Coast town itself is vibrant and welcoming, with the Kakum National Park canopy walkway just 30 minutes away. A visit here is not just a history lesson — it is a profound act of remembrance.</p>`
+  },
+  {
+    id: 2,
+    slug: "kumasi-ashanti-kingdom-golden-stool",
+    title: "Kumasi & the Golden Stool: Heart of the Ashanti Kingdom",
+    category: "Cultural",
+    date: "October 5, 2024",
+    author: "Kwame Asante",
+    readTime: "8 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628227/19_ngaa0q.jpg",
+    excerpt: "The Ashanti Kingdom is one of the most powerful empires in West African history. At its heart lies Kumasi — a vibrant city where the Golden Stool, Manhyia Palace, and kente-weaving villages keep centuries-old traditions fiercely alive.",
+    body: `<p>The Ashanti Kingdom, established in the late 17th century under the legendary Osei Tutu I, rose to become one of the most formidable states in West Africa. Its capital, Kumasi — the Garden City of West Africa — still pulses with the pride and culture of a people who successfully resisted British colonialism for decades.</p>
+    <p>The legend of the Golden Stool (Sika Dwa Kofi) is central to Ashanti identity. According to tradition, the stool descended from the heavens and landed in the lap of Osei Tutu, the first Asantehene (king). It is said to contain the soul of the Ashanti nation. To this day, the Golden Stool is never sat upon and is treated with the same reverence as a living monarch.</p>
+    <p>Manhyia Palace, the official residence of the Asantehene, is open to visitors and houses a fascinating museum telling the story of the Ashanti people. The current Asantehene, Otumfuo Osei Tutu II, remains one of the most respected traditional rulers in Ghana.</p>
+    <p>A visit to Kumasi would be incomplete without exploring the Kejetia Market — one of the largest open-air markets in West Africa — and the villages of Bonwire and Adanwomase, where master weavers produce the vibrant kente cloth that has become synonymous with Ghanaian identity worldwide.</p>
+    <p>The Ashanti Cultural Centre and the National Cultural Centre offer deep dives into the art, music, and traditions of the Ashanti people, making Kumasi an unmissable destination for anyone seeking to understand Ghana's soul.</p>`
+  },
+  {
+    id: 3,
+    slug: "elmina-oldest-european-building-africa",
+    title: "Elmina Castle: The Oldest European Building in Sub-Saharan Africa",
+    category: "Historical",
+    date: "October 12, 2024",
+    author: "James Adeyemi",
+    readTime: "6 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628230/20_tu13kh.png",
+    excerpt: "Built by the Portuguese in 1482, Elmina Castle predates the Americas as a colonial enterprise. It stands today as Africa's oldest surviving European structure — a beautiful, terrible monument to the age of exploration and exploitation.",
+    body: `<p>São Jorge da Mina — the Castle of St George of the Mine — was constructed by the Portuguese in 1482, making it the oldest European building in sub-Saharan Africa. Its construction predates Columbus's voyage to the Americas by a full decade. Originally built as a trading post for gold from the Ashanti interior, its purpose shifted to the slave trade as European colonial ambitions evolved.</p>
+    <p>Elmina Castle changed hands multiple times — from the Portuguese to the Dutch in 1637, and finally to the British in 1872 — each transition bringing new layers of history to its thick stone walls. The castle's dungeons held enslaved Africans in conditions of almost unimaginable suffering before they were loaded onto ships bound for the Americas.</p>
+    <p>One of the most haunting features of Elmina Castle is the "condemned cell" — a tiny, sealed room with no light and no ventilation where enslaved people who resisted were placed until they perished. Above this room, the castle's governor held his quarters — a chilling architectural representation of the colonial hierarchy.</p>
+    <p>Today, the castle is a UNESCO World Heritage Site that draws thousands of visitors annually, including diaspora Africans returning to connect with their ancestral homeland. The town of Elmina surrounding it is charming, with a vibrant fishing community and colorful canoes lining the lagoon — a reminder that life in Ghana has always been far richer than the darkness of the slave trade era.</p>`
+  },
+  {
+    id: 4,
+    slug: "larabanga-mosque-oldest-mosque-ghana",
+    title: "Larabanga Mosque: Ghana's Oldest Mosque and the Mystic Stone",
+    category: "Historical",
+    date: "October 19, 2024",
+    author: "Ibrahim Al-Hassan",
+    readTime: "5 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628232/22_osljv2.png",
+    excerpt: "Hidden in the savanna of Northern Ghana, Larabanga Mosque is believed to be over 600 years old — one of the oldest mosques in West Africa and a striking example of Sudano-Sahelian architecture. Near it lies a mysterious stone that, legend says, cannot be moved.",
+    body: `<p>The village of Larabanga, located near Mole National Park in Ghana's Savannah Region, is home to one of the oldest mosques in West Africa. The Larabanga Mosque is believed to have been built in 1421, making it over 600 years old. Constructed in the distinctive Sudano-Sahelian architectural style — mud brick with protruding wooden beams — it resembles the famous mosques of Djenné in Mali and Agadez in Niger.</p>
+    <p>According to local legend, the mosque was founded by a Muslim trader named Ayuba who dreamed that he should build a mosque at the spot where he placed his Quran. When he awoke, the Quran had disappeared, and he found it at the site where the mosque now stands. The story is a testament to the long history of Islam in northern Ghana, which predates European contact by centuries.</p>
+    <p>Beside the mosque lies the "Mystic Stone" — a large rock that, according to legend, cannot be permanently moved. Colonial administrators reportedly tried to have it relocated during road construction, but it always returned to its original position overnight. Today, it is treated as a sacred site by the community.</p>
+    <p>Non-Muslims are generally not permitted to enter the mosque, but the exterior is stunning, and the community welcomes respectful visitors. A visit to Larabanga pairs naturally with a safari at nearby Mole National Park, Ghana's largest wildlife reserve.</p>`
+  },
+  {
+    id: 5,
+    slug: "mole-national-park-ghana-safari",
+    title: "Mole National Park: Ghana's Wild Heart and Ancient Savanna",
+    category: "Adventure",
+    date: "October 26, 2024",
+    author: "Ama Korantema",
+    readTime: "7 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628235/23_wyrber.png",
+    excerpt: "Ghana's largest wildlife reserve covers 4,840 square kilometres of pristine savanna. Mole National Park is home to elephants, hippos, warthogs, baboons, and over 300 bird species — a true African safari experience in the heart of West Africa.",
+    body: `<p>Mole National Park, established in 1971, stretches across 4,840 square kilometres of northern Ghana's savanna landscape. It is Ghana's largest national park and one of the finest wildlife destinations in West Africa, offering something increasingly rare: the chance to walk alongside wild African elephants with a ranger guide.</p>
+    <p>The park is home to approximately 93 mammal species, including African elephants, buffalo, roan antelope, kob, waterbuck, warthogs, green monkeys, patas monkeys, and baboons. Crocodiles and hippopotamuses inhabit the park's watering holes. Over 300 bird species have been recorded, making it a paradise for ornithologists.</p>
+    <p>The experience of walking through the bush and approaching a herd of elephants on foot — no vehicle, no glass barrier — is extraordinary. Rangers lead small groups carefully, maintaining safe distances while allowing intimate encounters. Early morning and late afternoon walks are the most rewarding, when wildlife gathers at the waterhole visible from the Mole Motel's terrace.</p>
+    <p>The archaeological record of the Mole area suggests human habitation dating back thousands of years. Rock paintings and ancient tools have been found within the park boundaries, adding a historical dimension to the natural wonder. The nearby town of Damongo serves as a gateway, and the combination of Mole with Larabanga Mosque and the Mandari people's traditional villages makes this a rich cultural and natural itinerary.</p>`
+  },
+  {
+    id: 6,
+    slug: "nkrumah-mausoleum-independence-ghana",
+    title: "Kwame Nkrumah Mausoleum: Birthplace of Pan-African Independence",
+    category: "Historical",
+    date: "November 2, 2024",
+    author: "Kofi Boateng",
+    readTime: "6 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628235/16_o612r9.png",
+    excerpt: "On March 6, 1957, Ghana became the first sub-Saharan African country to gain independence from colonial rule. The Kwame Nkrumah Memorial Park in Accra marks the exact spot where independence was declared — a pilgrimage site for Pan-Africanists worldwide.",
+    body: `<p>On the evening of March 6, 1957, Dr. Kwame Nkrumah stood before a crowd of hundreds of thousands at the Old Polo Ground in Accra and declared Ghana's independence from British colonial rule. "Ghana, your beloved country, is free forever," he proclaimed. It was a moment that reverberated across Africa and the African diaspora, igniting independence movements across the continent.</p>
+    <p>The Kwame Nkrumah Memorial Park, built on the site of the Old Polo Ground where that declaration was made, is now one of Ghana's most visited landmarks. The park contains the mausoleum of Kwame Nkrumah and his wife Fathia, a striking modernist structure surrounded by fountains and gardens. Inside, an eternal flame burns in Nkrumah's memory.</p>
+    <p>Nkrumah's philosophy of Pan-Africanism — the unity of African peoples across the continent and the diaspora — continues to inspire generations worldwide. His books, including "Africa Must Unite" and "Neo-Colonialism: The Last Stage of Imperialism," remain essential texts in African political thought.</p>
+    <p>The adjacent museum traces Ghana's journey from colonialism to independence, displaying Nkrumah's personal effects, state gifts, and photographs from the independence era. The museum provides essential context for understanding modern Ghana and Africa's broader struggle for self-determination.</p>
+    <p>Located in the heart of Accra, the memorial park is an emotional and intellectually stimulating visit — one that connects Ghana's present to its transformative past.</p>`
+  },
+  {
+    id: 7,
+    slug: "kakum-national-park-canopy-walkway",
+    title: "Kakum National Park: Walking Above the Rainforest Canopy",
+    category: "Adventure",
+    date: "November 9, 2024",
+    author: "Sophie Reynolds",
+    readTime: "5 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628231/14_t2qztg.png",
+    excerpt: "Suspended 40 metres above the rainforest floor, the Kakum canopy walkway offers a breathtaking perspective on one of Ghana's most biodiverse ecosystems. The forest below has been sacred to the Akan people for centuries.",
+    body: `<p>Kakum National Park, located 30 kilometres north of Cape Coast in Ghana's Central Region, protects 375 square kilometres of tropical high forest — one of the last remaining patches of its kind in West Africa. The park is home to forest elephants, bongo antelope, Diana monkeys, and over 400 bird species. But its most famous attraction is the canopy walkway — a series of seven rope bridges suspended 40 metres above the forest floor, stretching for 333 metres through the treetops.</p>
+    <p>The walkway, one of only a few in Africa, offers visitors a rare view of the forest from the perspective of its canopy-dwelling residents. The experience of swaying gently above the forest while spotting hornbills, kingfishers, and the occasional monkey is unlike anything else in Ghana. Dawn visits are particularly magical, when the forest comes alive with sound and morning mist rises from the undergrowth below.</p>
+    <p>The forest itself holds deep cultural significance for the Akan people of the Central Region. For centuries, the Fante people who lived around Kakum regarded the forest as sacred — a source of medicinal plants, spiritual protection, and cultural identity. Many of the trees in the park are hundreds of years old, their trunks bearing the marks of generations of human connection.</p>
+    <p>A guided walk through the forest floor trails reveals the incredible biodiversity of the ecosystem — towering silk cotton trees, intricate fungi, medicinal herbs, and the sounds of hidden wildlife. Kakum pairs naturally with a visit to Cape Coast Castle, making the two sites a perfect full-day excursion from Accra.</p>`
+  },
+  {
+    id: 8,
+    slug: "osu-castle-christiansborg-accra",
+    title: "Christiansborg Castle: Seat of Ghanaian Power for Three Centuries",
+    category: "Historical",
+    date: "November 16, 2024",
+    author: "Kwame Asante",
+    readTime: "6 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628235/24_gpduct.png",
+    excerpt: "Christiansborg Castle in Accra — also known as Osu Castle — served as the seat of government for Danish, British, and Ghanaian rulers across three centuries. From colonial headquarters to the office of Ghana's presidents, it is a building that has witnessed history unfold.",
+    body: `<p>Perched on the rocky Atlantic coastline of Accra, Christiansborg Castle — known locally as Osu Castle — has served as the seat of political power on Ghana's coast for nearly 350 years. Built by the Danish in 1661, it passed to the British in 1850 and served as the headquarters of the Gold Coast colonial administration until independence. After 1957, it became the official residence and offices of Ghana's presidents, a role it held until 2013 when the new Jubilee House became the presidential palace.</p>
+    <p>The castle's architecture reflects its layered history — Danish bastions, British modifications, and Ghanaian renovations all visible in its whitewashed walls and towers. From its ramparts, you can see across Accra's coastline in both directions, understanding immediately why European traders considered this prime real estate for controlling the Gold Coast's commerce.</p>
+    <p>Like Cape Coast and Elmina, Christiansborg Castle also held enslaved Africans in its dungeons before they were shipped across the Atlantic. The castle's history thus encompasses both the horrors of the slave trade and the triumphant moment of Ghanaian independence — a building that has witnessed both the worst and the best of human history.</p>
+    <p>Today, parts of the castle are open to visitors, and a museum within its walls traces the political history of Ghana from the colonial era through the republic. A visit here, combined with a walk along Accra's atmospheric Labadi Beach, makes for an ideal Accra day itinerary.</p>`
+  },
+  {
+    id: 9,
+    slug: "volta-river-akosombo-dam-history",
+    title: "The Akosombo Dam & Lake Volta: Africa's Largest Artificial Lake",
+    category: "Historical",
+    date: "November 23, 2024",
+    author: "Ibrahim Al-Hassan",
+    readTime: "7 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628237/27_vwcha2.jpg",
+    excerpt: "The construction of the Akosombo Dam in 1965 created Lake Volta — the world's largest artificial lake by surface area. It powered Ghana's industrial ambitions but also displaced 80,000 people in one of Africa's largest infrastructure projects.",
+    body: `<p>The Akosombo Dam, completed in 1965 under the direction of President Kwame Nkrumah, stands as one of the most ambitious infrastructure projects in post-colonial African history. Built across the Volta River in Ghana's Eastern Region, the dam created the Volta Lake — the world's largest artificial lake by surface area, covering 8,502 square kilometres and stretching nearly the entire length of Ghana.</p>
+    <p>The dam was central to Nkrumah's industrialization vision for Ghana. The hydroelectric power it generates — 1,020 megawatts at its peak — was intended to power an aluminum smelting industry using bauxite from Ghana's interior, creating a vertically integrated industrial economy. The Valco aluminum smelter at Tema, built to use this power, became one of Africa's largest industrial operations.</p>
+    <p>The human cost of the dam's construction was enormous. The flooding of the Volta Basin displaced approximately 80,000 people from 739 towns and villages, creating one of the largest forced relocations in African history. The resettlement was poorly managed, and many communities lost not only their homes but their agricultural land, sacred sites, and social structures. The legacy of this displacement continues to shape communities in the Volta Region today.</p>
+    <p>Today, the Akosombo Dam and Lake Volta are both tourist attractions and working infrastructure. Boat trips on the lake reveal a haunting landscape of trees standing above the waterline — remnants of the forests that were flooded six decades ago. The dam's visitor center tells the story of its construction, and the surrounding landscape is beautiful in its own way, with fishing communities that have adapted to life on the lake.</p>`
+  },
+  {
+    id: 10,
+    slug: "wli-waterfalls-volta-hidden-gem",
+    title: "Wli Waterfalls: West Africa's Tallest Cascade Hidden in the Volta Hills",
+    category: "Adventure",
+    date: "November 30, 2024",
+    author: "Sophie Reynolds",
+    readTime: "5 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628231/15_sqctxs.png",
+    excerpt: "The Wli Waterfalls cascade 80 metres into a rock pool surrounded by thousands of fruit bats and lush rainforest. Located near the Togo border in the Volta Region, they are the tallest waterfalls in West Africa and one of Ghana's most spectacular natural wonders.",
+    body: `<p>The Wli Waterfalls — pronounced "Vlee" — are the tallest waterfalls in West Africa, plunging approximately 80 metres into a cool, mist-filled pool at the base of the Agumatsa Wildlife Sanctuary in Ghana's Volta Region. Located near the small town of Hohoe, close to the border with Togo, the falls are reached by a 45-minute hike through lush rainforest that is itself rewarding.</p>
+    <p>The walk to the lower falls passes through a forest alive with butterflies, birds, and the sound of rushing water growing louder with every step. As you approach the falls, you first notice the thousands of straw-coloured fruit bats (Eidolon helvum) roosting in the cliffs above — one of the largest bat colonies in Ghana. The sight of them wheeling overhead against the backdrop of the falling water is extraordinary.</p>
+    <p>The pool at the base of the falls is cool and refreshing — swimming is permitted and encouraged. More adventurous visitors can undertake the longer, steeper hike to the upper falls, where the views across the Volta Region's hills and forests are spectacular. On clear days, you can see across the border into Togo.</p>
+    <p>The Agumatsa Wildlife Sanctuary surrounding the falls is home to several primate species, including mona monkeys and olive baboons. The area is also sacred to the Ewe people, whose traditions and festivals — particularly the Dzawuwu Fire Festival — connect them deeply to this landscape. A visit to Wli pairs perfectly with nearby attractions including the Tafi Atome Monkey Sanctuary and the Tagbo Falls, making the Volta Region one of Ghana's most rewarding travel destinations.</p>`
+  },
+  {
+    id: 11,
+    slug: "manhyia-palace-ashanti-royalty",
+    title: "Manhyia Palace: Living History of Ashanti Royalty in Kumasi",
+    category: "Cultural",
+    date: "December 7, 2024",
+    author: "Kofi Boateng",
+    readTime: "6 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628237/25_rhjgkg.png",
+    excerpt: "Manhyia Palace is the official residence of the Asantehene — the king of the Ashanti people — and one of the most fascinating royal museums in Africa. Its history spans British conquest, exile, and triumphant restoration, mirroring the resilience of the Ashanti nation itself.",
+    body: `<p>Manhyia Palace in Kumasi is the official seat of the Asantehene — the paramount ruler of the Ashanti Kingdom — and one of the most historically significant royal palaces in Africa. The original Manhyia Palace was built in 1925 by the British colonial government for the return of Asantehene Agyeman Prempeh I from exile in the Seychelles, where he had been banished in 1896 after resisting British annexation of the Ashanti Kingdom.</p>
+    <p>The story of Prempeh I's exile and return is central to understanding Ashanti history. When the British demanded that the Asantehene bow before them and surrender the Golden Stool — the sacred symbol of Ashanti sovereignty — he refused and was captured and sent into exile. The Ashanti people never surrendered the stool, and Prempeh's eventual return in 1924 was a moment of national triumph.</p>
+    <p>Today, the old palace has been converted into a museum, while the current Asantehene, Otumfuo Osei Tutu II, resides in a newer palace adjacent to it. The museum displays royal regalia, ceremonial stools, weapons, and photographs from the Ashanti Kingdom's history. The highlight is the collection of artifacts from the Yaa Asantewaa War of 1900 — the last major armed resistance to British rule in Ghana, led by the Queen Mother Yaa Asantewaa.</p>
+    <p>Visitors can also time their trip to coincide with the Akwasidae festival — held every six weeks — when the Asantehene holds court in full ceremonial regalia, accompanied by the sound of fontomfrom drums and the sight of traditional priests and linguists. It is one of the most spectacular traditional ceremonies in Ghana and an unmissable cultural experience.</p>`
+  },
+  {
+    id: 12,
+    slug: "fort-good-hope-sekondi-ghana",
+    title: "Fort Good Hope & Sekondi: Ghana's Forgotten Colonial History",
+    category: "Historical",
+    date: "December 14, 2024",
+    author: "James Adeyemi",
+    readTime: "5 min read",
+    image: "https://res.cloudinary.com/duokkf6tl/image/upload/v1773628237/26_hnrzrh.png",
+    excerpt: "While Cape Coast and Elmina draw most visitors, Ghana's coastline is dotted with dozens of lesser-known forts and castles that tell equally important stories. Fort Good Hope in Sekondi is one of them — a Dutch-built stronghold from 1640 that few tourists ever visit.",
+    body: `<p>Ghana's coastline is one of the most historically layered in all of Africa, dotted with more than 30 forts and castles built by European powers between the 15th and 18th centuries. While Cape Coast Castle and Elmina Castle attract most visitors, a network of lesser-known fortifications stretches from the Volta River in the east to the Ivorian border in the west, each with its own story to tell.</p>
+    <p>Fort Good Hope in Sekondi, originally built by the Dutch in 1640 on a rocky headland overlooking the Atlantic, is one of the oldest and least visited of these sites. Reconstructed by the Dutch in 1868, the fort changed hands between Dutch, British, and Brandenburger forces multiple times over its history — a microcosm of the intense European competition for control of the Gold Coast's lucrative trade.</p>
+    <p>Sekondi itself, Ghana's second-oldest city, rewards exploration. Its historic harbor, Victorian-era railway station (the first in Ghana, built in 1898), and colonial-era architecture make it feel like a living museum. The nearby city of Takoradi — now merged with Sekondi into the twin cities — is Ghana's main deep-water port and an important hub for the country's oil industry.</p>
+    <p>For the historically curious traveler willing to venture off the beaten path, the Western Region's coastline offers extraordinary rewards. Fort Amsterdam at Abandze, Fort Metal Cross at Dixcove, and Fort William at Anomabo are all accessible day trips that provide a richer, more complete picture of Ghana's colonial history than the famous castles alone can offer.</p>`
+  }
+];
+
+// Search function — used by both pages
+function searchBlogs(query) {
+  const q = query.toLowerCase().trim();
+  if (!q) return BLOG_POSTS;
+  return BLOG_POSTS.filter(p =>
+    p.title.toLowerCase().includes(q) ||
+    p.excerpt.toLowerCase().includes(q) ||
+    p.category.toLowerCase().includes(q) ||
+    p.author.toLowerCase().includes(q)
+  );
+}
+</script>
+<style>
+  :root {
+    --orange:      #CE1126; /* Ghana Red   */
+    --teal:        #006B3F; /* Ghana Green */
+    --ghana-gold:  #FCD116; /* Ghana Gold  */
+    --dark:  #1a1a1a;
+    --text:  #333;
+    --muted: #666;
+    --light: #f8f8f8;
+    --white: #fff;
+    --border: #e5e5e5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: var(--white);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg, #CE1126 33.3%, #FCD116 33.3% 66.6%, #006B3F 66.6%) 1;
+    padding: 0 4%; display: flex; align-items: center; gap: 20px; height: 72px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; flex-shrink: 0; }
+  .nav-logo-icon { width: 42px; height: 42px; }
+  .nav-logo-img {
+  height: 60px;       /* Adjust size */
+  width: 60px;        /* Same as height for circle */
+  object-fit: cover;  /* Ensures the logo fills the circle */
+  border-radius: 50%; /* Makes it circular */
+  border: 3px solid #003366; /* Optional: adds a blue border */
+  background-color: #fff;    /* Optional: white background */
+  padding: 5px;       /* Space inside the circle */
+  display: block;
+}
+
+.nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 700; line-height: 1; letter-spacing: -0.3px; }
+  .logo-ghana {
+  font-size: 28px;
+  font-weight: 700;
+  color: #003366;   /* Deep blue */
+  text-transform: uppercase;
+  display: block;   /* Forces WI-ANN onto its own line */
+  align-items: center; /* Vertically centers the text */
+}
+
+.logo-tour {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FF4DA6;   /* Vibrant pink */
+  text-transform: uppercase;
+  display: block;   /* Places TRAVEL & TOUR below */
+  margin-top: 4px;  /* Small spacing between lines */
+}
+
+  .nav-links { display: flex; gap: 28px; margin-left: auto; list-style: none; }
+  .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; margin-left: auto; }
+  .hamburger span { width: 22px; height: 2px; background: var(--dark); border-radius: 2px; }
+
+  /* BLOG HERO */
+  .blog-hero {
+    height: 50vh; min-height: 320px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%),
+      url('https://res.cloudinary.com/duokkf6tl/image/upload/v1773628238/29_hxogtq.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; color: white; padding: 0 5%;
+  }
+  .blog-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 600; line-height: 1.2; margin-bottom: 8px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .blog-hero p { font-size: 1rem; opacity: 0.88; max-width: 560px; line-height: 1.7; }
+
+  /* SEARCH BAR */
+  .search-wrap {
+    background: var(--white); padding: 32px 8%;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .search-box {
+    flex: 1; min-width: 260px;
+    display: flex; align-items: center; gap: 10px;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 12px 18px; transition: border 0.2s;
+  }
+  .search-box:focus-within { border-color: var(--teal); }
+  .search-box input {
+    flex: 1; border: none; outline: none;
+    font-family: 'Jost', sans-serif; font-size: 0.9rem; color: var(--text);
+  }
+  .search-box input::placeholder { color: var(--muted); }
+  .search-box svg { flex-shrink: 0; color: var(--muted); }
+  .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-tab {
+    padding: 8px 18px; border-radius: 24px; border: 1.5px solid var(--border);
+    background: white; font-family: 'Jost', sans-serif; font-size: 0.8rem;
+    font-weight: 500; cursor: pointer; transition: all 0.2s; color: var(--text);
+  }
+  .filter-tab:hover { border-color: var(--teal); color: var(--teal); }
+  .filter-tab.active { background: var(--teal); border-color: var(--teal); color: white; }
+
+  /* RESULTS META */
+  .results-meta {
+    padding: 20px 8% 0; font-size: 0.85rem; color: var(--muted);
+  }
+  .results-meta span { color: var(--teal); font-weight: 600; }
+
+  /* BLOG GRID */
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 32px; padding: 28px 8% 80px;
+  }
+  .blog-card {
+    background: white; border-radius: 10px; overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07); transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  .blog-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+  .blog-card-img { overflow: hidden; height: 210px; position: relative; }
+  .blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .blog-card:hover .blog-card-img img { transform: scale(1.06); }
+  .blog-card-cat {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--orange); color: white;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; padding: 4px 10px; border-radius: 4px;
+  }
+  .blog-card-body { padding: 22px 22px 20px; }
+  .blog-card-meta { font-size: 0.73rem; color: var(--muted); margin-bottom: 10px; display: flex; gap: 10px; align-items: center; }
+  .blog-card-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); flex-shrink: 0; }
+  .blog-card-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    font-weight: 700; color: var(--dark); line-height: 1.35;
+    margin-bottom: 12px; transition: color 0.2s;
+  }
+  .blog-card:hover .blog-card-title { color: var(--teal); }
+  .blog-card-excerpt { font-size: 0.855rem; color: var(--muted); line-height: 1.75; margin-bottom: 18px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .blog-card-read { color: var(--orange); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px; text-decoration: none; }
+
+  /* EMPTY STATE */
+  .empty-state { grid-column: 1/-1; text-align: center; padding: 80px 20px; color: var(--muted); }
+  .empty-state h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--dark); margin-bottom: 10px; }
+
+  /* MODAL (post view) */
+  .post-modal {
+    display: none; position: fixed; inset: 0; z-index: 3000;
+    background: rgba(0,0,0,0.65); backdrop-filter: blur(4px);
+    align-items: flex-start; justify-content: center;
+    padding: 40px 20px; overflow-y: auto;
+  }
+  .post-modal.open { display: flex; }
+  .post-inner {
+    background: white; border-radius: 12px; width: 100%; max-width: 740px;
+    margin: auto; position: relative; box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+  .post-img { width: 100%; height: 340px; object-fit: cover; display: block; }
+  .post-close {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(0,0,0,0.45); border: none; color: white;
+    width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+    font-size: 1rem; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s; z-index: 10;
+  }
+  .post-close:hover { background: rgba(0,0,0,0.7); }
+  .post-content { padding: 36px 40px 48px; }
+  .post-cat { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: block; }
+  .post-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--dark); line-height: 1.25; margin-bottom: 16px; }
+  .post-meta { display: flex; gap: 16px; font-size: 0.8rem; color: var(--muted); margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .post-body p { font-size: 0.95rem; color: var(--text); line-height: 1.9; margin-bottom: 18px; }
+
+   /* ── FOOTER ── */
+  footer {
+    background: var(--white); border-top: 1px solid var(--border);
+    padding: 56px 8% 28px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+  
+  .footer-logo-img{
+    height: 60px;       /* Adjust size */
+  width: 60px;        /* Same as height for circle */
+  object-fit: cover;  /* Ensures the logo fills the circle */
+  border-radius: 50%; /* Makes it circular */
+  border: 3px solid #003366; /* Optional: adds a blue border */
+  background-color: #fff;    /* Optional: white background */
+  padding: 5px;       /* Space inside the circle */
+  display: block;
+
+  }
+  
+  
+  
+  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; text-decoration: none; color: inherit; outline: none; -webkit-user-select: none; user-select: none; }
+  .footer-logo:focus { outline: none; }
+  .footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.2px; }
+  .social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icon svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.2);
+  fill: #FF4DA6;
+}
+
+.social-text {
+  font-size: 14px;
+  color: #003366;
+  font-weight: 600;
+}
+  .footer-col h4 { font-size: 1rem; font-weight: 600; margin-bottom: 18px; color: var(--dark); }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { color: var(--muted); font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--orange); }
+  .contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.875rem; color: var(--muted); }
+  .contact-icon { color: var(--teal); flex-shrink: 0; font-size: 1rem; margin-top: 2px; }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; }
+  .footer-bottom-copy { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .footer-bottom-copy .sep { opacity: 0.35; }
+  .footer-bottom-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 18px; }
+  .footer-bottom-links a { color: var(--muted); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+  .footer-bottom-links a:hover { color: var(--orange); }
+  .footer-dev-bar { border-top: 1px solid var(--border); padding-top: 16px; padding-bottom: 4px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .footer-dev-byline { font-size: 0.75rem; color: var(--muted); }
+  .footer-dev-byline strong { color: var(--dark); font-weight: 600; font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; }
+  .footer-dev-byline .dev-dot { color: var(--teal); margin: 0 6px; }
+  .footer-dev-contacts { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
+  .footer-dev-contacts a { display: inline-flex; align-items: center; gap: 5px; font-size: 0.76rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-dev-contacts a:hover { color: var(--orange); }
+  .footer-dev-contacts a svg { opacity: 0.55; }
+  .footer-dev-motto-text { font-size: 0.72rem; color: var(--muted); font-style: italic; opacity: 0.7; }
+
+  @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: white; padding: 32px 5%; gap: 20px; z-index: 999; font-size: 1.1rem; }
+    .blog-grid { grid-template-columns: 1fr; padding: 24px 5% 60px; }
+    .search-wrap { padding: 24px 5%; }
+    .results-meta { padding: 16px 5% 0; }
+    .post-content { padding: 24px 22px 36px; }
+    .post-img { height: 220px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom-copy { flex-direction: column; gap: 6px; }
+    .footer-dev-contacts { gap: 12px; flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <!-- Ghana flag-striped circle with Black Star -->
+    <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628247/logo_nhdd5o.png" alt="Ghana Tour Logo" class="nav-logo-img">
+    <span class="nav-logo-text">
+      <span class="logo-ghana">WI- ANN</span>  <span class="logo-tour">TRAVEL & TOUR</span>
+    </span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="tours.html">UPCOMING GROUP TOURS</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#contact">CONTACT</a></li>
+    <li><a href="index.html#about">ABOUT US</a></li>
+    <li><a href="blog.html" class="active">BLOG</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <h1>Latest Blog Posts</h1>
+  <p>Discover the history, culture, and hidden wonders of Ghana through the stories of those who've walked its sacred paths.</p>
+</div>
+
+<!-- SEARCH + FILTERS -->
+<div class="search-wrap">
+  <div class="search-box">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Search blog posts, places, categories…" oninput="handleSearch()">
+    <button onclick="clearSearch()" id="clearBtn" style="display:none;background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;line-height:1;">✕</button>
+  </div>
+  <div class="filter-tabs" id="filterTabs">
+    <button class="filter-tab active" onclick="setFilter('All', this)">All</button>
+    <button class="filter-tab" onclick="setFilter('Historical', this)">Historical</button>
+    <button class="filter-tab" onclick="setFilter('Cultural', this)">Cultural</button>
+    <button class="filter-tab" onclick="setFilter('Adventure', this)">Adventure</button>
+  </div>
+</div>
+
+<!-- RESULTS META -->
+<div class="results-meta" id="resultsMeta"></div>
+
+<!-- BLOG GRID -->
+<div class="blog-grid" id="blogGrid"></div>
+
+<!-- POST MODAL -->
+<div class="post-modal" id="postModal" onclick="handleModalClick(event)">
+  <div class="post-inner" id="postInner">
+    <button class="post-close" onclick="closePost()">✕</button>
+    <img id="postImg" src="" alt="" class="post-img">
+    <div class="post-content">
+      <span class="post-cat" id="postCat"></span>
+      <h2 class="post-title" id="postTitle"></h2>
+      <div class="post-meta" id="postMeta"></div>
+      <div class="post-body" id="postBody"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <a href="#" class="footer-logo">
+        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628247/logo_nhdd5o.png" alt="Wi-Ann Travel & Tour Logo" class="footer-logo-img">
+        <span class="footer-logo-text">
+          <span style="font-size:20px; font-weight:900; color:#003366; text-transform:uppercase; display:block;">Wi-Ann</span>
+          <span style="font-size:15px; font-weight:600; color:#FF4DA6; text-transform:uppercase; display:block;">Travel & Tour</span>
+        </span>
+      </a>
+      <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;margin-bottom:8px;">Licensed Ghanaian tour operator since 2010. Rooted in the Akwaaba tradition — where every visitor is family.</p>
+      <div class="social-icons">
+  <!-- Facebook -->
+  <div class="social-row">
+    <a href="#" class="social-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#003366" viewBox="0 0 24 24">
+        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+      </svg>
+    </a>
+    <span class="social-text">@Wi-Ann Travel & Tour</span>
+  </div>
+
+  <!-- YouTube -->
+  <div class="social-row">
+    <a href="#" class="social-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF0000" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.386.566a2.994 2.994 0 0 0-2.112 2.12C0 8.072 0 12 0 12s0 3.928.502 5.814a2.994 2.994 0 0 0 2.112 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.386-.566a2.994 2.994 0 0 0 2.112-2.12C24 15.928 24 12 24 12s0-3.928-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z"/>
+      </svg>
+    </a>
+    <span class="social-text">@Wi-Ann Travel & Tour</span>
+  </div>
+
+  <!-- Instagram -->
+  <div class="social-row">
+    <a href="#" class="social-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#C13584" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.34 3.608 1.316.975.975 1.254 2.242 1.316 3.608.058 1.266.07 1.646.07 4.843s-.012 3.577-.07 4.843c-.062 1.366-.34 2.633-1.316 3.608-.975.975-2.242 1.254-3.608 1.316-1.266.058-1.646.07-4.843.07s-3.577-.012-4.843-.07c-1.366-.062-2.633-.34-3.608-1.316-.975-.975-1.254-2.242-1.316-3.608C2.175 15.577 2.163 15.197 2.163 12s.012-3.577.07-4.843c.062-1.366.34-2.633 1.316-3.608.975-.975 2.242-1.254 3.608-1.316C8.423 2.175 8.803 2.163 12 2.163zm0 1.684c-3.17 0-3.548.012-4.795.07-1.042.048-1.61.218-1.985.393-.5.243-.857.534-1.243.92-.386.386-.677.743-.92 1.243-.175.375-.345.943-.393 1.985-.058 1.247-.07 1.625-.07 4.795s.012 3.548.07 4.795c.048 1.042.218 1.61.393 1.985.243.5.534.857.92 1.243.386.386.743.677 1.243.92.375.175.943.345 1.985.393 1.247.058 1.625.07 4.795.07s3.548-.012 4.795-.07c1.042-.048 1.61-.218 1.985-.393.5-.243.857-.534 1.243-.92.386-.386.677-.743.92-1.243.175-.375.345-.943.393-1.985.058-1.247.07-1.625.07-4.795s-.012-3.548-.07-4.795c-.048-1.042-.218-1.61-.393-1.985-.243-.5-.534-.857-.92-1.243-.386-.386-.743-.677-1.243-.92-.375-.175-.943-.345-1.985-.393-1.247-.058-1.625-.07-4.795-.07zm0 3.905a4.932 4.932 0 1 0 0 9.864 4.932 4.932 0 0 0 0-9.864zm0 8.149a3.217 3.217 0 1 1 0-6.434 3.217 3.217 0 0 1 0 6.434zm4.984-8.91a1.148 1.148 0 1 1-2.296 0 1.148 1.148 0 0 1 2.296 0z"/>
+      </svg>
+    </a>
+    <span class="social-text">@Wi-Ann Travel & Tour</span>
+  </div>
+
+  <!-- LinkedIn -->
+  <div class="social-row">
+    <a href="#" class="social-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.604 0 4.268 2.372 4.268 5.455v6.288zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.814 20.452H3.861V9h2.953v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.771v20.454C0 23.229.792 24 1.771 24h20.454C23.229 24 24 23.229 24 22.225V1.771C24 .771 23.229 0 22.225 0z"/>
+      </svg>
+    </a>
+    <span class="social-text">@Wi-Ann Travel & Tour</span>
+  </div>
+</div>
+
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#destinations">Destinations</a></li>
+        <li><a href="tours.html">Upcoming Group Tours</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </div>
+        <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-item">
+        <span class="contact-icon">✉</span>
+        <a href="mailto:info@ghanatour.com" style="color:var(--muted);text-decoration:none;">info@ghanatour.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📞</span>
+        +233 053 941 8949  /  +233 020 565 2929
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        Accra, Ghana
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🕐</span>
+        Mon–Sat, 8am–6pm GMT
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-copy">
+      <span>© 2025 Ghana Tour. Akwaaba. All rights reserved.</span>
+      <span class="sep">|</span>
+      <span>Made with ❤️ in Ghana 🇬🇭</span>
+    </div>
+    <div class="footer-bottom-links">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+    <div class="footer-dev-bar">
+      <div class="footer-dev-byline">
+        Designed &amp; Developed by <span class="dev-dot">⚡</span> <strong>Kay Tech Studios</strong>
+      </div>
+            <div class="footer-dev-contacts">
+        <a href="https://kaytechstudios.netlify.app" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          kaytechstudios.netlify.app
+        </a>
+        <a href="mailto:kaytechstudios@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>kaytechstudios@gmail.com</a>
+        <a href="tel:+233534329262">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +233 534 329 262
+        </a>
+      </div>
+      <div class="footer-dev-motto-text">Serving with compassion, leading with purpose.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let activeFilter = 'All';
+  let activeQuery = '';
+
+  function renderPosts(posts) {
+    const grid = document.getElementById('blogGrid');
+    const meta = document.getElementById('resultsMeta');
+    if (posts.length === 0) {
+      grid.innerHTML = '<div class="empty-state"><h3>No posts found</h3><p>Try a different search term or category.</p></div>';
+      meta.innerHTML = '';
+      return;
+    }
+    meta.innerHTML = 'Showing <span>' + posts.length + '</span> of <span>' + BLOG_POSTS.length + '</span> posts';
+    grid.innerHTML = posts.map(function(p) {
+      return '<div class="blog-card" onclick="openPost(' + p.id + ')">' +
+        '<div class="blog-card-img">' +
+          '<img src="' + p.image + '" alt="' + p.title + '" loading="lazy">' +
+          '<span class="blog-card-cat">' + p.category + '</span>' +
+        '</div>' +
+        '<div class="blog-card-body">' +
+          '<div class="blog-card-meta">' +
+            '<span>' + p.date + '</span><span class="dot"></span><span>' + p.readTime + '</span><span class="dot"></span><span>' + p.author + '</span>' +
+          '</div>' +
+          '<h3 class="blog-card-title">' + p.title + '</h3>' +
+          '<p class="blog-card-excerpt">' + p.excerpt + '</p>' +
+          '<span class="blog-card-read">READ MORE »</span>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function applyFilters() {
+    var results = activeFilter === 'All' ? BLOG_POSTS : BLOG_POSTS.filter(function(p) { return p.category === activeFilter; });
+    if (activeQuery) {
+      results = results.filter(function(p) {
+        return p.title.toLowerCase().includes(activeQuery) ||
+               p.excerpt.toLowerCase().includes(activeQuery) ||
+               p.author.toLowerCase().includes(activeQuery);
+      });
+    }
+    renderPosts(results);
+  }
+
+  function handleSearch() {
+    activeQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+    document.getElementById('clearBtn').style.display = activeQuery ? 'inline' : 'none';
+    applyFilters();
+  }
+
+  function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    activeQuery = '';
+    document.getElementById('clearBtn').style.display = 'none';
+    applyFilters();
+  }
+
+  function setFilter(cat, btn) {
+    activeFilter = cat;
+    document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function openPost(id) {
+    var p = BLOG_POSTS.find(function(x) { return x.id === id; });
+    if (!p) return;
+    document.getElementById('postImg').src = p.image;
+    document.getElementById('postImg').alt = p.title;
+    document.getElementById('postCat').textContent = p.category;
+    document.getElementById('postTitle').textContent = p.title;
+    document.getElementById('postMeta').innerHTML =
+      '<span>\u{1F4C5} ' + p.date + '</span>' +
+      '<span>\u270D\uFE0F ' + p.author + '</span>' +
+      '<span>\u23F1 ' + p.readTime + '</span>';
+    document.getElementById('postBody').innerHTML = p.body;
+    var modal = document.getElementById('postModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modal.scrollTop = 0;
+  }
+
+  function closePost() {
+    document.getElementById('postModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function handleModalClick(e) {
+    if (e.target === document.getElementById('postModal')) closePost();
+  }
+
+  (function init() {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q') || sessionStorage.getItem('blogSearch') || '';
+    if (q) {
+      document.getElementById('searchInput').value = q;
+      activeQuery = q.toLowerCase();
+      sessionStorage.removeItem('blogSearch');
+    }
+    applyFilters();
+  })();
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePost();
+  });
+</script>
+</body>
+</html>
