@@ -540,6 +540,11 @@
   .bm-pay-btn:hover { background:#14512B; transform:translateY(-1px); }
   .bm-secure-note { text-align:center; font-size:.76rem; color:#666; margin-top:.8rem; }
   .bm-secure-note i { color:#006B3F; margin-right:.3rem; }
+  .bm-phone-row { display:flex; gap:0; }
+  .bm-phone-row select { width:auto; min-width:130px; flex-shrink:0; border-right:none; background:#f8f8f8; font-size:.82rem; padding:.85rem .6rem; cursor:pointer; }
+  .bm-phone-row select:focus { border-color:#006B3F; }
+  .bm-phone-row input { flex:1; border-left:1px solid #e5e5e5; }
+  .bm-phone-row input:focus { border-color:#006B3F; }
   /* Payment modal */
   .payment-modal { padding: 2.5rem; text-align: center; }
   .payment-modal h2 { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:700; margin-bottom:.5rem; color:#1a1a1a; }
@@ -858,16 +863,67 @@
 
     <!-- Kay Tech Studios -->
     <div class="partner-logo">
-      <div style="
-        width:72px; height:72px; border-radius:50%;
-        background: linear-gradient(135deg, var(--teal) 0%, #1a7a76 100%);
-        display:flex; align-items:center; justify-content:center;
-        font-size:1.8rem; flex-shrink:0;
-        box-shadow: 0 4px 16px rgba(58,175,169,0.25);
-      ">⚡</div>
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0; filter:drop-shadow(0 4px 10px rgba(30,203,224,0.2));">
+        <defs><clipPath id="ktsCircleClip"><circle cx="32" cy="32" r="30"/></clipPath></defs>
+        <circle cx="32" cy="32" r="30" fill="#0b1a3a"/>
+        <g clip-path="url(#ktsCircleClip)">
+          <line x1="2" y1="22" x2="62" y2="22" stroke="#1ecbe0" stroke-width="0.5" opacity="0.25"/>
+          <line x1="2" y1="42" x2="62" y2="42" stroke="#1ecbe0" stroke-width="0.5" opacity="0.25"/>
+          <line x1="14" y1="2" x2="14" y2="62" stroke="#1ecbe0" stroke-width="0.5" opacity="0.2"/>
+          <line x1="50" y1="2" x2="50" y2="62" stroke="#1ecbe0" stroke-width="0.5" opacity="0.2"/>
+          <circle cx="14" cy="22" r="1.5" fill="#1ecbe0" opacity="0.4"/>
+          <circle cx="50" cy="22" r="1.5" fill="#1ecbe0" opacity="0.4"/>
+          <circle cx="14" cy="42" r="1.5" fill="#1ecbe0" opacity="0.4"/>
+          <circle cx="50" cy="42" r="1.5" fill="#1ecbe0" opacity="0.4"/>
+          <rect x="21" y="21" width="22" height="22" rx="3" fill="#0d2244" stroke="#1ecbe0" stroke-width="1.2"/>
+          <rect x="25" y="25" width="14" height="14" rx="1.5" fill="#0b1a3a" stroke="#1ecbe0" stroke-width="0.6" opacity="0.7"/>
+          <line x1="32" y1="26" x2="32" y2="38" stroke="#1ecbe0" stroke-width="0.5" opacity="0.5"/>
+          <line x1="26" y1="32" x2="38" y2="32" stroke="#1ecbe0" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="32" cy="32" r="3" fill="#1ecbe0" opacity="0.9"/>
+          <circle cx="32" cy="32" r="1.5" fill="#ffffff" opacity="0.9"/>
+          <line x1="15" y1="25" x2="21" y2="25" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="15" y1="29" x2="21" y2="29" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="15" y1="35" x2="21" y2="35" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="15" y1="39" x2="21" y2="39" stroke="#1ecbe0" stroke-width="1.1"/>
+          <rect x="13" y="23.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="13" y="27.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="13" y="33.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="13" y="37.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <line x1="43" y1="25" x2="49" y2="25" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="43" y1="29" x2="49" y2="29" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="43" y1="35" x2="49" y2="35" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="43" y1="39" x2="49" y2="39" stroke="#1ecbe0" stroke-width="1.1"/>
+          <rect x="48" y="23.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="48" y="27.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="48" y="33.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="48" y="37.5" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <line x1="25" y1="15" x2="25" y2="21" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="29" y1="15" x2="29" y2="21" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="35" y1="15" x2="35" y2="21" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="39" y1="15" x2="39" y2="21" stroke="#1ecbe0" stroke-width="1.1"/>
+          <rect x="23.5" y="13" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="27.5" y="13" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="33.5" y="13" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="37.5" y="13" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <line x1="25" y1="43" x2="25" y2="49" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="29" y1="43" x2="29" y2="49" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="35" y1="43" x2="35" y2="49" stroke="#1ecbe0" stroke-width="1.1"/>
+          <line x1="39" y1="43" x2="39" y2="49" stroke="#1ecbe0" stroke-width="1.1"/>
+          <rect x="23.5" y="48" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="27.5" y="48" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="33.5" y="48" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+          <rect x="37.5" y="48" width="3" height="3" rx="0.5" fill="#1ecbe0"/>
+        </g>
+        <circle cx="32" cy="32" r="30" stroke="#1ecbe0" stroke-width="1.5" fill="none"/>
+      </svg>
       <div style="text-align:left;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700; color:var(--dark); line-height:1.2;">Kay Tech Studios</div>
-        <div style="font-size:0.75rem; color:var(--muted); margin-top:3px; letter-spacing:0.4px;">Design &amp; Development Partner</div>
+        <div style="display:flex; align-items:center; gap:6px; margin-top:5px;">
+          <span style="display:inline-block; width:28px; height:1px; background:#c9831b; opacity:0.5;"></span>
+          <span style="display:inline-block; width:6px; height:6px; background:#c9831b; transform:rotate(45deg); flex-shrink:0;"></span>
+          <span style="display:inline-block; width:28px; height:1px; background:#c9831b; opacity:0.5;"></span>
+        </div>
+        <div style="font-size:0.68rem; color:#0e8fa3; font-weight:700; margin-top:5px; letter-spacing:0.18em; font-family:'Trebuchet MS',Arial,sans-serif;">WEB DEVELOPMENT &nbsp;·&nbsp; GRAPHIC DESIGN</div>
         <a href="https://kaytechstudios.netlify.app" target="_blank" style="
           display:inline-block; margin-top:6px; font-size:0.72rem;
           color:var(--teal); text-decoration:none; border-bottom:1px solid var(--teal);
@@ -977,7 +1033,7 @@
     </div>
     <div class="footer-dev-bar">
       <div class="footer-dev-byline">
-        Designed &amp; Developed by <span class="dev-dot">⚡</span> <strong>Kay Tech Studios</strong>
+        Designed &amp; Developed by <span class="dev-dot">⚡</span> <strong>Kay Tech Studios</strong> <span style="opacity:0.45; margin:0 4px;">·</span> <span style="font-size:0.7em; letter-spacing:0.12em; font-weight:700; color:#0e8fa3;">WEB DEVELOPMENT &nbsp;·&nbsp; GRAPHIC DESIGN</span>
       </div>
             <div class="footer-dev-contacts">
         <a href="https://kaytechstudios.netlify.app" target="_blank">
@@ -1100,7 +1156,54 @@
         </div>
         <div class="bm-form-group">
           <label>Phone Number</label>
-          <input type="tel" id="bPhone" placeholder="+233 XX XXX XXXX">
+          <div class="bm-phone-row">
+            <select id="bPhoneCode" aria-label="Country code">
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+1-CA">🇨🇦 +1</option>
+              <option value="+7">🇷🇺 +7</option>
+              <option value="+20">🇪🇬 +20</option>
+              <option value="+27">🇿🇦 +27</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+86">🇨🇳 +86</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+212">🇲🇦 +212</option>
+              <option value="+220">🇬🇲 +220</option>
+              <option value="+221">🇸🇳 +221</option>
+              <option value="+223">🇲🇱 +223</option>
+              <option value="+224">🇬🇳 +224</option>
+              <option value="+225">🇨🇮 +225</option>
+              <option value="+226">🇧🇫 +226</option>
+              <option value="+227">🇳🇪 +227</option>
+              <option value="+228">🇹🇬 +228</option>
+              <option value="+229">🇧🇯 +229</option>
+              <option value="+231">🇱🇷 +231</option>
+              <option value="+232">🇸🇱 +232</option>
+              <option value="+233" selected>🇬🇭 +233</option>
+              <option value="+234">🇳🇬 +234</option>
+              <option value="+237">🇨🇲 +237</option>
+              <option value="+241">🇬🇦 +241</option>
+              <option value="+243">🇨🇩 +243</option>
+              <option value="+244">🇦🇴 +244</option>
+              <option value="+250">🇷🇼 +250</option>
+              <option value="+251">🇪🇹 +251</option>
+              <option value="+254">🇰🇪 +254</option>
+              <option value="+255">🇹🇿 +255</option>
+              <option value="+256">🇺🇬 +256</option>
+              <option value="+260">🇿🇲 +260</option>
+              <option value="+263">🇿🇼 +263</option>
+              <option value="+264">🇳🇦 +264</option>
+              <option value="+966">🇸🇦 +966</option>
+              <option value="+971">🇦🇪 +971</option>
+            </select>
+            <input type="tel" id="bPhone" placeholder="XX XXX XXXX">
+          </div>
           <div class="bm-error-msg" id="errPhone">Please enter your phone number.</div>
         </div>
         <div class="bm-form-row">
@@ -1322,7 +1425,7 @@
       firstName:   document.getElementById('bFirstName').value,
       lastName:    document.getElementById('bLastName').value,
       email:       document.getElementById('bEmail').value,
-      phone:       document.getElementById('bPhone').value,
+      phone:       document.getElementById('bPhoneCode').value.replace('-CA','') + ' ' + document.getElementById('bPhone').value,
       tourId, tourName: tour.name, tourPrice: tour.price,
       date:        document.getElementById('bDate').value,
       participants: pax,
@@ -1366,17 +1469,17 @@
       document.body.style.overflow = 'hidden';
       btn.innerHTML = '<i class="fas fa-lock"></i> <span id="payBtnText">Pay Now</span>';
       btn.disabled = false;
-    }, 2000);
+    }, 2200);
   }
 
   function bmFormatCard(el) {
-    let v = el.value.replace(/\D/g, '').substring(0, 16);
-    el.value = v.replace(/(.{4})/g, '$1 ').trim();
+    let v = el.value.replace(/\D/g,'').substring(0,16);
+    el.value = v.replace(/(\d{4})(?=\d)/g,'$1 ');
   }
 
   function bmFormatExpiry(el) {
-    let v = el.value.replace(/\D/g, '').substring(0, 4);
-    if (v.length >= 3) v = v.substring(0,2) + '/' + v.substring(2);
+    let v = el.value.replace(/\D/g,'').substring(0,4);
+    if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2);
     el.value = v;
   }
 </script>
