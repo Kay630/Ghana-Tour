@@ -158,24 +158,55 @@
   #why .section-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 56px; }
   .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 56px; }
   .why-item { position: relative; }
-  .why-icon { color: var(--teal); margin-bottom: 14px; font-size: 2rem; }
+  .why-icon { margin-bottom: 16px; }
+  .why-icon i { font-size: 1.6rem; color: var(--teal); background: rgba(0,107,63,0.08); width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-left: 3px solid var(--teal); }
   .why-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
   .why-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.8; }
 
-  /* ── SPECIAL OFFERS ── */
-  #offers { background: var(--white); }
-  .offers-inner {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+  /* ── UPCOMING GROUP TOURS ── */
+  #upcoming { background: #fdfdfd; }
+  #upcoming .section-heading { text-align: center; margin-bottom: 8px; }
+  #upcoming .section-sub { text-align: center; color: var(--muted); font-size: 0.95rem; max-width: 560px; margin: 0 auto 52px; line-height: 1.8; }
+  .upcoming-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .tour-card {
+    background: var(--white); border: 1px solid var(--border);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: box-shadow 0.3s, transform 0.3s;
   }
-  .offers-img { position: relative; }
-  .offers-img-frame {
-    border: 3px solid var(--orange); border-radius: 4px;
-    padding: 14px; display: block; box-sizing: border-box;
+  .tour-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.10); transform: translateY(-4px); }
+  .tour-card-img { position: relative; height: 220px; overflow: hidden; }
+  .tour-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+  .tour-card:hover .tour-card-img img { transform: scale(1.06); }
+  .tour-card-date {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--orange); color: #fff;
+    padding: 6px 14px; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.8px; text-transform: uppercase;
   }
-  .offers-img-frame img { width: 100%; height: 420px; object-fit: cover; border-radius: 2px; display: block; }
-  .offers-text .section-eyebrow { margin-bottom: 12px; }
-  .offers-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
-  .offers-text p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; margin-bottom: 28px; }
+  .tour-card-spots {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(0,0,0,0.65); color: #fff;
+    padding: 5px 11px; font-size: 0.7rem; font-weight: 600;
+  }
+  .tour-card-body { padding: 22px 22px 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .tour-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: var(--dark); line-height: 1.25; }
+  .tour-card-meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--muted); }
+  .tour-card-meta span { display: flex; align-items: center; gap: 5px; }
+  .tour-card-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.75; flex: 1; }
+  .tour-card-footer { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; border-top: 1px solid var(--border); background: #fafafa; }
+  .tour-card-price { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--orange); }
+  .tour-card-price small { font-family: 'Jost', sans-serif; font-size: 0.72rem; color: var(--muted); font-weight: 400; }
+  .btn-book-now {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--teal); color: #fff;
+    padding: 10px 20px; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.4px; border: none; cursor: pointer;
+    font-family: 'Jost', sans-serif; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-book-now:hover { background: #14512B; transform: translateY(-1px); }
+  @media (max-width: 900px) { .upcoming-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 580px) { .upcoming-grid { grid-template-columns: 1fr; } }
 
   /* ── TESTIMONIALS ── */
   #testimonials { background: var(--white); }
@@ -401,7 +432,7 @@
     .videos-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .dest-entry { gap: 40px; }
-    .offers-inner { gap: 40px; }
+
     .about-inner { gap: 40px; }
     #indexBlogGrid { grid-template-columns: repeat(2, 1fr) !important; }
   }
@@ -426,8 +457,7 @@
     .dest-text h2 { font-size: 1.5rem; }
     .btn-outline-dark { display: block; text-align: center; }
     .why-grid { grid-template-columns: 1fr; gap: 28px; }
-    .offers-inner { grid-template-columns: 1fr; gap: 28px; }
-    .offers-img-frame img { height: 260px; }
+
     .offers-text h2 { font-size: 1.7rem; }
     .videos-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     .about-inner { grid-template-columns: 1fr; gap: 28px; }
@@ -540,11 +570,40 @@
   .bm-pay-btn:hover { background:#14512B; transform:translateY(-1px); }
   .bm-secure-note { text-align:center; font-size:.76rem; color:#666; margin-top:.8rem; }
   .bm-secure-note i { color:#006B3F; margin-right:.3rem; }
-  .bm-phone-row { display:flex; gap:0; }
-  .bm-phone-row select { width:auto; min-width:130px; flex-shrink:0; border-right:none; background:#f8f8f8; font-size:.82rem; padding:.85rem .6rem; cursor:pointer; }
-  .bm-phone-row select:focus { border-color:#006B3F; }
+  .bm-phone-row { display:flex; gap:0; position:relative; }
   .bm-phone-row input { flex:1; border-left:1px solid #e5e5e5; }
   .bm-phone-row input:focus { border-color:#006B3F; }
+  /* Custom country picker */
+  .cp-wrap { position:relative; flex-shrink:0; }
+  .cp-trigger {
+    display:flex; align-items:center; gap:8px;
+    padding:.85rem 12px; border:2px solid #e5e5e5; border-right:none;
+    background:#f8f8f8; cursor:pointer; min-width:160px;
+    font-family:'Jost',sans-serif; font-size:.85rem; color:#1a1a1a;
+    white-space:nowrap; transition:border-color .2s; user-select:none;
+  }
+  .cp-trigger:hover, .cp-trigger.open { border-color:#006B3F; background:#fff; }
+  .cp-trigger .cp-flag { font-size:1.4rem; line-height:1; }
+  .cp-trigger .cp-name { font-weight:500; color:#333; }
+  .cp-trigger .cp-code { color:#006B3F; font-weight:700; font-size:.82rem; }
+  .cp-trigger .cp-arrow { margin-left:auto; font-size:.65rem; color:#999; transition:transform .2s; }
+  .cp-trigger.open .cp-arrow { transform:rotate(180deg); }
+  .cp-dropdown {
+    display:none; position:absolute; top:calc(100% + 2px); left:0;
+    background:#fff; border:2px solid #006B3F; z-index:9999;
+    width:260px; max-height:260px; overflow-y:auto;
+    box-shadow:0 8px 32px rgba(0,0,0,.12);
+  }
+  .cp-dropdown.open { display:block; }
+  .cp-option {
+    display:flex; align-items:center; gap:10px;
+    padding:9px 14px; cursor:pointer; font-size:.84rem;
+    transition:background .15s;
+  }
+  .cp-option:hover, .cp-option.active { background:#f0faf4; }
+  .cp-option .cp-flag { font-size:1.25rem; line-height:1; }
+  .cp-option .cp-oname { flex:1; color:#333; font-weight:500; }
+  .cp-option .cp-ocode { color:#006B3F; font-weight:700; font-size:.78rem; }
   /* Payment modal */
   .payment-modal { padding: 2.5rem; text-align: center; }
   .payment-modal h2 { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:700; margin-bottom:.5rem; color:#1a1a1a; }
@@ -576,6 +635,63 @@
     .payment-methods { grid-template-columns: 1fr; }
     .bm-detail-grid { grid-template-columns: 1fr; }
   }
+
+  /* ── SUCCESS ACTION BUTTONS ── */
+  .success-actions { display: flex; gap: 12px; margin-top: 0; }
+  .success-actions .btn-orange { flex: 1; justify-content: center; border: none; }
+  .btn-print {
+    flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: #006B3F; color: #fff;
+    padding: 16px; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px;
+    border: none; cursor: pointer; font-family: 'Jost', sans-serif;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-print:hover { background: #14512B; transform: translateY(-2px); }
+
+  /* ── SCROLL FADE-IN ANIMATIONS ── */
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+
+  /* ── PAYMENT SECURITY BADGES ── */
+  .pay-badges { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding-top: 14px; border-top: 1px solid #f0f0f0; }
+  .pay-badge { display: flex; align-items: center; gap: 5px; background: #f8f8f8; border: 1px solid #e5e5e5; padding: 5px 10px; border-radius: 4px; font-size: .72rem; font-weight: 700; color: #444; white-space: nowrap; }
+  .pay-badge i { font-size: .85rem; }
+
+  /* ── FAQ ── */
+  #faq { background: #fdfdfd; }
+  #faq .section-heading { text-align: center; margin-bottom: 8px; }
+  #faq .faq-sub { text-align: center; color: var(--muted); font-size: .95rem; max-width: 540px; margin: 0 auto 48px; line-height: 1.8; }
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-question {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 4px; cursor: pointer; gap: 16px;
+    font-weight: 600; font-size: .95rem; color: var(--dark);
+    transition: color .2s; user-select: none;
+  }
+  .faq-question:hover { color: var(--teal); }
+  .faq-question.open { color: var(--teal); }
+  .faq-icon { width: 28px; height: 28px; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .8rem; color: var(--teal); transition: all .2s; border-radius: 50%; }
+  .faq-question.open .faq-icon { background: var(--teal); color: #fff; border-color: var(--teal); transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .25s ease; }
+  .faq-answer.open { max-height: 300px; }
+  .faq-answer p { padding: 0 4px 20px; font-size: .9rem; color: var(--muted); line-height: 1.85; }
+
+  /* ── BACK TO TOP ── */
+  #backToTop {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 46px; height: 46px; background: var(--teal); color: #fff;
+    border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; opacity: 0; pointer-events: none;
+    transition: opacity .3s, transform .3s, background .2s;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+  #backToTop.visible { opacity: 1; pointer-events: all; }
+  #backToTop:hover { background: #14512B; transform: translateY(-3px); }
 </style>
 </head>
 <body>
@@ -621,7 +737,7 @@
 </section>
 
 <!-- TOP DESTINATIONS -->
-<section id="destinations">
+<section id="destinations" class="fade-in">
   <h2 class="section-heading" style="font-size:clamp(2rem,3.5vw,2.8rem);">Top Destinations</h2>
 
   <!-- Ghana -->
@@ -631,7 +747,7 @@
     </div>
     <div class="dest-text">
       <h2>Accra - Ghana </h2>
-      <p>Explore the rich culture and history of Ghana with us. This West African country offers a diverse range of experiences, including delicious cuisine, stunning beaches, amazing wildlife, and fascinating historical sites. Let us design your perfect trip tailored to your interests, travel style, and budget. Experience Africa tours at an affordable price with our group tour packages or create your own custom itinerary. With our monthly payment plan program, join us for a memorable adventure that truly matters!</p>
+      <p>Ghana is a West African gem bursting with vibrant culture, rich history, mouth-watering cuisine, pristine beaches, and incredible wildlife. At Wi-Ann Travel & Tour, we craft trips tailored entirely to your passions, travel style, and budget — whether you join one of our popular group packages or prefer a custom-built itinerary. Our flexible monthly payment plan makes an unforgettable African adventure more accessible than ever. Come and experience Ghana the way it was meant to be explored.</p>
       <a href="tours.html" class="btn-outline-dark">View Tours</a>
     </div>
   </div>
@@ -643,7 +759,7 @@
     </div>
     <div class="dest-text">
       <h2>Kumasi – Ashanti Region</h2>
-      <p>Discover the heartland of the mighty Ashanti Kingdom. Visit Manhyia Palace, Kejetia Market — Africa's largest open market — and the vibrant kente weaving villages of Bonwire and Adanwomase. Our team will work with you to create the perfect itinerary tailored to your interests, travel style, and budget. With our affordable group tour packages or customized private journeys, the Ashanti Kingdom awaits you.</p>
+      <p>Step into the soul of the legendary Ashanti Kingdom. Stroll through the historic Manhyia Palace, lose yourself in the bustling stalls of Kejetia Market — one of Africa's largest open-air markets — and witness the centuries-old art of kente weaving in the villages of Bonwire and Adanwomase. Whether you choose a guided group tour or a private journey built around your schedule and interests, the golden heritage of Ashanti is waiting to welcome you.</p>
       <a href="tours.html" class="btn-outline-dark">View Tours</a>
     </div>
   </div>
@@ -655,68 +771,162 @@
     </div>
     <div class="dest-text">
       <h2>Volta Region & Northern Ghana</h2>
-      <p>Experience the breathtaking beauty of Ghana's Volta Region and Northern savanna with us. From the thundering Wli Waterfalls — West Africa's tallest — to the wildlife of Mole National Park and the ancient Larabanga Mosque, we've got you covered. Choose from our affordable group tour packages or let us tailor a trip specifically for you. With options to fit every interest and budget, an exceptional Ghanaian adventure awaits.</p>
+      <p>From the thundering cascade of Wli Waterfalls — the tallest in West Africa — to the sweeping savannas of Mole National Park and the ancient mud walls of the Larabanga Mosque, Ghana's Volta and Northern regions offer an adventure unlike any other. We'll build you an experience that fits your budget and curiosity, whether that's an affordable group outing or a fully personalized expedition into Ghana's most spectacular landscapes.</p>
       <a href="tours.html" class="btn-outline-dark">View Tours</a>
     </div>
   </div>
 </section>
 
 <!-- WHY TRAVEL WITH US -->
-<section id="why">
-  <h2 class="section-heading">Why Travel With Ghana Tour?</h2>
+<section id="why" class="fade-in">
+  <h2 class="section-heading">Why Travel With Wi-Ann Travel & Tour</h2>
   <div class="why-grid" style="margin-top:48px;">
     <div class="why-item">
-      <div class="why-icon">🌍</div>
+      <div class="why-icon"><i class="fas fa-map-marked-alt"></i></div>
       <div class="why-title">We are Ghanaian</div>
-      <p class="why-desc">As natives of this land, we bring a profound understanding of the cultures, traditions, and Akwaaba spirit unique to Ghana. Our firsthand familiarity serves as a guiding compass in curating genuine and deeply engaging travel journeys — from Accra to Tamale, Cape Coast to the Volta hills.</p>
+      <p class="why-desc">We are not just tour operators — we are proud natives of this land. That deep-rooted connection gives us an insider's appreciation of Ghana's diverse cultures, cherished traditions, and the warm Akwaaba spirit that makes this country so special. From the beaches of Accra to the highlands of the Volta, every journey we design is shaped by genuine local knowledge and authentic pride.</p>
     </div>
     <div class="why-item">
-      <div class="why-icon">📅</div>
-      <div class="why-title">Easy Monthly Payments</div>
-      <p class="why-desc">Recognizing the significance of accessibility and convenience, we provide adaptable payment alternatives including a monthly installment plan. Reserve your ideal Ghanaian adventure without financial worry. We accept card, MTN Mobile Money, Vodafone Cash, and AirtelTigo Money.</p>
+      <div class="why-icon"><i class="fas fa-wallet"></i></div>
+      <div class="why-title">Flexible Payment Options</div>
+      <p class="why-desc">We offer two flexible ways to pay — full payment or half installments. Pay in full and lock in your spot completely, or secure your booking with a 50% deposit and settle the remaining balance before departure. We accept card payments, MTN Mobile Money, Vodafone Cash, and AirtelTigo Money.</p>
     </div>
     <div class="why-item">
-      <div class="why-icon">💰</div>
+      <div class="why-icon"><i class="fas fa-tag"></i></div>
       <div class="why-title">Affordability</div>
-      <p class="why-desc">At Ghana Tour, our commitment is to furnish explorers with top-notch services at the most competitive prices, ensuring the splendour of Ghana remains accessible to all. We offer everything from cost-effective group tours starting from $95 to bespoke luxury packages.</p>
+      <p class="why-desc">Exceptional travel experiences shouldn't carry an exceptional price tag. At Wi-Ann Travel & Tour, we're committed to delivering high-quality services at prices that work for everyone. From budget-friendly group tours starting at just $95 to fully tailored luxury packages, Ghana's wonders are within your reach.</p>
     </div>
     <div class="why-item">
-      <div class="why-icon">🏅</div>
+      <div class="why-icon"><i class="fas fa-award"></i></div>
       <div class="why-title">Award-Winning Guides</div>
-      <p class="why-desc">Our certified local guides bring 10+ years of experience and a deep love for Ghana's authentic stories. From the slave dungeons of Cape Coast to the drum rhythms of Kumasi, our seasoned professionals design unparalleled, bespoke Ghanaian experiences that go far beyond sightseeing.</p>
+      <p class="why-desc">Our certified local guides bring over a decade of experience and an unmatched passion for sharing Ghana's most authentic stories. Whether you're walking through the historic corridors of Cape Coast Castle or moving to the rhythms of a Kumasi drum ceremony, our expert team crafts immersive, one-of-a-kind Ghanaian encounters that go well beyond the typical tourist trail.</p>
     </div>
     <div class="why-item">
-      <div class="why-icon">🎓</div>
+      <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
       <div class="why-title">Education & Reliability</div>
-      <p class="why-desc">Our dedicated team excels in orchestrating memorable tours across Ghana's 16 regions. We offer structured small-group tours as well as fully personalized journeys, meticulously curated to align with your interests. Free cancellation up to 48 hours before departure — reschedule anytime.</p>
+      <p class="why-desc">Our experienced team has guided travellers across all 16 regions of Ghana with precision, care, and a love for storytelling. Choose from structured small-group tours or a fully personalized journey meticulously designed around your interests. And with free cancellation available up to 48 hours before departure — plus the option to reschedule anytime — travelling with us is as stress-free as it gets.</p>
     </div>
     <div class="why-item">
-      <div class="why-icon">🛟</div>
+      <div class="why-icon"><i class="fas fa-headset"></i></div>
       <div class="why-title">24/7 Support</div>
-      <p class="why-desc">Our primary objective is to present you with an effortless and anxiety-free journey. Our dedicated team remains at your disposal from the meticulous planning stage to the flawless execution. We stand by you every step of the way, guaranteeing an indelible Ghanaian adventure. Mon–Sat, 8am–6pm.</p>
+      <p class="why-desc">From the moment you start planning to the final farewell, our dedicated team is by your side. We handle every detail so you can focus entirely on soaking up the beauty of Ghana. You'll never feel alone on your journey — our support team is available Monday to Saturday, 8am to 6pm, ready to ensure every moment of your trip is seamless and memorable.</p>
     </div>
   </div>
 </section>
 
-<!-- SPECIAL OFFERS -->
-<section id="offers">
-  <div class="offers-inner">
-    <div class="offers-img">
-      <div class="offers-img-frame">
-        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628247/5_jwmx9o.jpg" alt="Group Ghana Tour">
+<!-- UPCOMING GROUP TOURS -->
+<section id="upcoming" class="fade-in">
+  <span class="section-eyebrow" style="display:block;text-align:center;">UPCOMING GROUP TOURS</span>
+  <h2 class="section-heading">Join Our Next Adventure</h2>
+  <p class="section-sub">Spots fill fast — secure your place on one of our next guided group departures and experience Ghana with fellow travellers from around the world.</p>
+
+  <div class="upcoming-grid">
+
+    <!-- Tour 1: Cape Coast -->
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628230/13_q48xc9.png" alt="Cape Coast Castle">
+        <div class="tour-card-date">📅 Apr 12, 2026</div>
+        <div class="tour-card-spots">🔥 4 spots left</div>
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-card-title">Cape Coast Castle & Elmina</div>
+        <div class="tour-card-meta">
+          <span><i class="fas fa-clock"></i> 2 Days</span>
+          <span><i class="fas fa-users"></i> Group Tour</span>
+          <span><i class="fas fa-map-marker-alt"></i> Central Region</span>
+        </div>
+        <p class="tour-card-desc">Walk the historic corridors of Cape Coast Castle, explore Elmina — Africa's oldest European structure — and stroll the vibrant fishing harbour.</p>
+      </div>
+      <div class="tour-card-footer">
+        <div class="tour-card-price">$180 <small>/ person</small></div>
+        <button class="btn-book-now" onclick="openBookingModal('cape-coast')">
+          <i class="fas fa-calendar-check"></i> Book Now
+        </button>
       </div>
     </div>
-    <div class="offers-text">
-      <span class="section-eyebrow">GET STARTED</span>
-      <h2>Special Offers &<br>Discounts Tours</h2>
-      <p>Whether your dream is to walk the haunting corridors of Cape Coast Castle, trek to the summit of Mount Afadjato, witness the Homowo or Odwira festivals, or unwind on the pristine beaches of Busua — we have a cost-effective Ghanaian tour package tailored just for you. Our annual group tour packages feature remarkable discounts, making the exploration of Ghana accessible to all. Select from our 50+ top-rated tours and sign up for a package that harmonizes with your interests and budget. With our monthly installment plan, you can embark on your Ghana adventure for as low as $200 per month.</p>
-      <a href="#" class="btn-orange">VIEW SPECIAL OFFERS</a>
+
+    <!-- Tour 2: Kumasi -->
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628234/17_qnwyqo.png" alt="Kumasi Ashanti Kingdom">
+        <div class="tour-card-date">📅 Apr 26, 2026</div>
+        <div class="tour-card-spots">⚡ 6 spots left</div>
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-card-title">Kumasi Ashanti Kingdom</div>
+        <div class="tour-card-meta">
+          <span><i class="fas fa-clock"></i> 3 Days</span>
+          <span><i class="fas fa-users"></i> Group Tour</span>
+          <span><i class="fas fa-map-marker-alt"></i> Ashanti Region</span>
+        </div>
+        <p class="tour-card-desc">Discover Manhyia Palace, the world-famous Kejetia Market, and the kente weaving villages of Bonwire — the living heartbeat of the Ashanti Kingdom.</p>
+      </div>
+      <div class="tour-card-footer">
+        <div class="tour-card-price">$200 <small>/ person</small></div>
+        <button class="btn-book-now" onclick="openBookingModal('kumasi')">
+          <i class="fas fa-calendar-check"></i> Book Now
+        </button>
+      </div>
     </div>
+
+    <!-- Tour 3: Volta Region -->
+    <div class="tour-card">
+      <div class="tour-card-img">
+        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628231/15_sqctxs.png" alt="Volta Region Wli Waterfalls">
+        <div class="tour-card-date">📅 May 10, 2026</div>
+        <div class="tour-card-spots">✅ 8 spots left</div>
+      </div>
+      <div class="tour-card-body">
+        <div class="tour-card-title">Volta Region & Wli Waterfalls</div>
+        <div class="tour-card-meta">
+          <span><i class="fas fa-clock"></i> 3 Days</span>
+          <span><i class="fas fa-users"></i> Group Tour</span>
+          <span><i class="fas fa-map-marker-alt"></i> Volta Region</span>
+        </div>
+        <p class="tour-card-desc">Trek to the thundering Wli Waterfalls — West Africa's tallest — cruise Lake Volta, and soak in the lush green highlands of eastern Ghana.</p>
+      </div>
+      <div class="tour-card-footer">
+        <div class="tour-card-price">$160 <small>/ person</small></div>
+        <button class="btn-book-now" onclick="openBookingModal('volta')">
+          <i class="fas fa-calendar-check"></i> Book Now
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="tours.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:white;padding:14px 36px;font-size:0.875rem;font-weight:600;letter-spacing:0.5px;text-decoration:none;transition:background 0.2s;border-radius:6px;" onmouseover="this.style.background='#a50e1e'" onmouseout="this.style.background='var(--orange)'">
+      VIEW ALL TOURS <i class="fas fa-arrow-right"></i>
+    </a>
   </div>
 </section>
 
+<script>
+(function(){
+  const nums = document.querySelectorAll('.stat-number');
+  if (!nums.length) return;
+  const speed = 60;
+  function animateCount(el) {
+    const target = +el.dataset.target;
+    const step = Math.ceil(target / speed);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(timer); }
+      el.textContent = target >= 10000 ? current.toLocaleString() + '+' : target === 2010 ? current : current + '+';
+    }, 20);
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); observer.unobserve(e.target); } });
+  }, { threshold: 0.4 });
+  nums.forEach(n => observer.observe(n));
+})();
+</script>
+
 <!-- TESTIMONIALS -->
-<section id="testimonials">
+<section id="testimonials" class="fade-in">
   <h2 class="section-heading">Testimonials</h2>
   <div class="videos-grid" style="margin-top:40px;">
     <div class="video-thumb" onclick="playYT(this,'yJ1FBknGMNM')">
@@ -761,7 +971,9 @@
 </section>
 
 <!-- ABOUT US -->
-<section id="about">
+<section id="about" class="fade-in">
+
+<!-- CUSTOMER REVIEWS -->
   <div class="about-inner">
     <div class="about-text">
       <span class="section-eyebrow">ABOUT US</span>
@@ -803,7 +1015,7 @@
 <!-- PLAN CTA -->
 <section id="plan-cta" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://res.cloudinary.com/duokkf6tl/image/upload/v1773628237/18_clvrbc.png'); background-size: cover; background-position: center;">
   <h2>Plan Your Ghana Travel Now</h2>
-  <p>We understand the importance of personalizing your trip to make it truly your own, which is why we offer customized itinerary options. Our team will work with you to design a trip that fits your interests, schedule and budget, ensuring you have a unique and memorable Ghanaian experience. With us, you have the freedom to make your trip as tailored to your needs as possible, so you can make the most of your time in the heart of West Africa.</p>
+  <p>No two travellers are the same — and neither are our itineraries. We take time to understand your interests, schedule, and budget, then craft a Ghana travel plan that is uniquely yours. Whether you're drawn to history, nature, culture, or cuisine, our team will put together a journey that makes every day in West Africa count. Your perfect Ghana experience starts with a single step — let's plan it together.</p>
   <button class="btn-orange" onclick="openBookingModal()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     START PLAN NOW
@@ -825,8 +1037,78 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="fade-in">
+  <span class="section-eyebrow" style="display:block;text-align:center;">FREQUENTLY ASKED QUESTIONS</span>
+  <h2 class="section-heading">Got Questions? We've Got Answers.</h2>
+  <p class="faq-sub">Everything you need to know before booking your Ghana adventure with Wi-Ann Travel & Tour.</p>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How do I book a tour with Wi-Ann Travel & Tour?
+        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>Booking is easy — simply click the "Book Now" or "Help Me Plan" button on any page, fill in your details, choose your tour and travel date, then complete payment. Our team will reach out within 24 hours to confirm your booking. You can also contact us directly via email or WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What payment options do you offer?
+        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>We offer two flexible payment options — full payment upfront, or a half-and-half installment plan where you pay 50% to secure your booking and the remaining balance before departure. We accept Visa, Mastercard, MTN Mobile Money, Vodafone Cash, and AirtelTigo Money.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Can I cancel or reschedule my booking?
+        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes. We offer free cancellation up to 48 hours before your departure date. You can also reschedule your tour to a future date at no additional charge. Simply contact our team and we'll sort it out for you.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Are your tours suitable for solo travellers?
+        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>Absolutely. Whether you're travelling solo, as a couple, with family, or in a group, we have options for everyone. Our group tours are a great way to meet fellow travellers, while our private tours give you full flexibility and personalised attention.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What is included in your tour packages?
+        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>Our packages typically include a certified local guide, transportation within Ghana, entrance fees to attractions, and curated itinerary planning. Accommodation and international flights are not included unless specified. Contact us for a full breakdown of what's included in your chosen tour.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Do I need a visa to visit Ghana?
+        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>Visa requirements depend on your nationality. Citizens of ECOWAS countries do not require a visa. Most other nationalities can apply for a Ghana e-Visa online before arrival. We recommend checking with your local Ghanaian embassy or the Ghana Immigration Service website for the latest requirements.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- PARTNERS -->
-<section id="partners">
+<section id="partners" class="fade-in">
   <h2 class="section-heading">Our Partners</h2>
   <p>We are proud to work alongside trusted partners who share our commitment to delivering exceptional, authentic Ghanaian travel experiences. Together we bring you the very best in local expertise, digital craftsmanship, and traveler satisfaction.</p>
   <div class="partners-logos">
@@ -1005,7 +1287,7 @@
       <h4>Contact</h4>
       <div class="contact-item">
         <span class="contact-icon">✉</span>
-        <a href="mailto:info@ghanatour.com" style="color:var(--muted);text-decoration:none;">info@ghanatour.com</a>
+        <a href="mailto:info@wi-anntravel.com" style="color:var(--muted);text-decoration:none;">info@wi-anntravel.com</a>
       </div>
       <div class="contact-item">
         <span class="contact-icon">📞</span>
@@ -1051,7 +1333,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── NAV SEARCH ──
   function navSearch() {
     const q = document.getElementById('navSearchInput').value.toLowerCase().trim();
@@ -1157,51 +1439,17 @@
         <div class="bm-form-group">
           <label>Phone Number</label>
           <div class="bm-phone-row">
-            <select id="bPhoneCode" aria-label="Country code">
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+1-CA">🇨🇦 +1</option>
-              <option value="+7">🇷🇺 +7</option>
-              <option value="+20">🇪🇬 +20</option>
-              <option value="+27">🇿🇦 +27</option>
-              <option value="+33">🇫🇷 +33</option>
-              <option value="+34">🇪🇸 +34</option>
-              <option value="+39">🇮🇹 +39</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+55">🇧🇷 +55</option>
-              <option value="+61">🇦🇺 +61</option>
-              <option value="+81">🇯🇵 +81</option>
-              <option value="+86">🇨🇳 +86</option>
-              <option value="+91">🇮🇳 +91</option>
-              <option value="+212">🇲🇦 +212</option>
-              <option value="+220">🇬🇲 +220</option>
-              <option value="+221">🇸🇳 +221</option>
-              <option value="+223">🇲🇱 +223</option>
-              <option value="+224">🇬🇳 +224</option>
-              <option value="+225">🇨🇮 +225</option>
-              <option value="+226">🇧🇫 +226</option>
-              <option value="+227">🇳🇪 +227</option>
-              <option value="+228">🇹🇬 +228</option>
-              <option value="+229">🇧🇯 +229</option>
-              <option value="+231">🇱🇷 +231</option>
-              <option value="+232">🇸🇱 +232</option>
-              <option value="+233" selected>🇬🇭 +233</option>
-              <option value="+234">🇳🇬 +234</option>
-              <option value="+237">🇨🇲 +237</option>
-              <option value="+241">🇬🇦 +241</option>
-              <option value="+243">🇨🇩 +243</option>
-              <option value="+244">🇦🇴 +244</option>
-              <option value="+250">🇷🇼 +250</option>
-              <option value="+251">🇪🇹 +251</option>
-              <option value="+254">🇰🇪 +254</option>
-              <option value="+255">🇹🇿 +255</option>
-              <option value="+256">🇺🇬 +256</option>
-              <option value="+260">🇿🇲 +260</option>
-              <option value="+263">🇿🇼 +263</option>
-              <option value="+264">🇳🇦 +264</option>
-              <option value="+966">🇸🇦 +966</option>
-              <option value="+971">🇦🇪 +971</option>
-            </select>
+            <!-- Custom Country Code Picker -->
+            <div class="cp-wrap" id="cpWrap">
+              <input type="hidden" id="bPhoneCode" value="+233">
+              <div class="cp-trigger" id="cpTrigger" onclick="cpToggle()">
+                <span class="cp-flag" id="cpFlag">🇬🇭</span>
+                <span class="cp-name" id="cpName">Ghana</span>
+                <span class="cp-code" id="cpCode">+233</span>
+                <span class="cp-arrow">▼</span>
+              </div>
+              <div class="cp-dropdown" id="cpDropdown"></div>
+            </div>
             <input type="tel" id="bPhone" placeholder="XX XXX XXXX">
           </div>
           <div class="bm-error-msg" id="errPhone">Please enter your phone number.</div>
@@ -1263,6 +1511,13 @@
           <i class="fas fa-lock"></i> Proceed to Payment
         </button>
         <p class="bm-secure-note"><i class="fas fa-shield-alt"></i> Secured by SSL. We accept card &amp; Mobile Money.</p>
+        <div class="pay-badges">
+          <div class="pay-badge"><i class="fab fa-cc-visa" style="color:#1A1F71;font-size:1.1rem;"></i> Visa</div>
+          <div class="pay-badge"><i class="fab fa-cc-mastercard" style="color:#EB001B;font-size:1.1rem;"></i> Mastercard</div>
+          <div class="pay-badge"><i class="fas fa-mobile-alt" style="color:#FFCB00;"></i> MTN MoMo</div>
+          <div class="pay-badge"><i class="fas fa-mobile-alt" style="color:#E2001A;"></i> Vodafone Cash</div>
+          <div class="pay-badge"><i class="fas fa-mobile-alt" style="color:#0066A1;"></i> AirtelTigo</div>
+        </div>
       </form>
     </div>
   </div>
@@ -1347,12 +1602,19 @@
         <span id="bookingRef">GT-000000</span>
       </div>
       <div class="success-details" id="successDetails"></div>
-      <button class="btn-orange" onclick="closeBmModal('successOverlay')" style="width:100%;justify-content:center;display:flex;align-items:center;gap:.5rem;border:none;">
-        <i class="fas fa-compass"></i> Close
-      </button>
+      <div class="success-actions">
+        <button class="btn-print" onclick="printReceipt()">
+          <i class="fas fa-print"></i> Print Receipt
+        </button>
+        <button class="btn-orange" onclick="closeBmModal('successOverlay')" style="justify-content:center;display:flex;align-items:center;gap:.5rem;border:none;">
+          <i class="fas fa-compass"></i> Close
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- ══ PRINT RECEIPT: generated in new tab via JS ══ -->
 
 <script>
   // Tour price map
@@ -1369,9 +1631,12 @@
   let bmBookingData = {};
   let bmSelectedPayMethod = 'card';
 
-  function openBookingModal() {
+  function openBookingModal(tourId) {
     const today = new Date(); today.setDate(today.getDate() + 1);
     document.getElementById('bDate').min = today.toISOString().split('T')[0];
+    if (tourId) {
+      document.getElementById('bTour').value = tourId;
+    }
     updateSummary();
     document.getElementById('bookingOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1469,18 +1734,253 @@
       document.body.style.overflow = 'hidden';
       btn.innerHTML = '<i class="fas fa-lock"></i> <span id="payBtnText">Pay Now</span>';
       btn.disabled = false;
-    }, 2200);
+    }, 2000);
   }
 
+  // ── COUNTRY CODE PICKER ──
+  const CP_COUNTRIES = [
+    { flag:'🇬🇭', name:'Ghana',           code:'+233' },
+    { flag:'🇺🇸', name:'United States',   code:'+1'   },
+    { flag:'🇬🇧', name:'United Kingdom',  code:'+44'  },
+    { flag:'🇨🇦', name:'Canada',          code:'+1'   },
+    { flag:'🇳🇬', name:'Nigeria',         code:'+234' },
+    { flag:'🇿🇦', name:'South Africa',    code:'+27'  },
+    { flag:'🇰🇪', name:'Kenya',           code:'+254' },
+    { flag:'🇹🇿', name:'Tanzania',        code:'+255' },
+    { flag:'🇺🇬', name:'Uganda',          code:'+256' },
+    { flag:'🇷🇼', name:'Rwanda',          code:'+250' },
+    { flag:'🇪🇹', name:'Ethiopia',        code:'+251' },
+    { flag:'🇸🇳', name:'Senegal',         code:'+221' },
+    { flag:'🇨🇮', name:"Côte d'Ivoire",  code:'+225' },
+    { flag:'🇨🇲', name:'Cameroon',        code:'+237' },
+    { flag:'🇬🇳', name:'Guinea',          code:'+224' },
+    { flag:'🇲🇱', name:'Mali',            code:'+223' },
+    { flag:'🇧🇫', name:'Burkina Faso',    code:'+226' },
+    { flag:'🇧🇯', name:'Benin',           code:'+229' },
+    { flag:'🇹🇬', name:'Togo',            code:'+228' },
+    { flag:'🇳🇪', name:'Niger',           code:'+227' },
+    { flag:'🇬🇲', name:'Gambia',          code:'+220' },
+    { flag:'🇸🇱', name:'Sierra Leone',    code:'+232' },
+    { flag:'🇱🇷', name:'Liberia',         code:'+231' },
+    { flag:'🇬🇦', name:'Gabon',           code:'+241' },
+    { flag:'🇨🇩', name:'DR Congo',        code:'+243' },
+    { flag:'🇦🇴', name:'Angola',          code:'+244' },
+    { flag:'🇿🇲', name:'Zambia',          code:'+260' },
+    { flag:'🇿🇼', name:'Zimbabwe',        code:'+263' },
+    { flag:'🇳🇦', name:'Namibia',         code:'+264' },
+    { flag:'🇪🇬', name:'Egypt',           code:'+20'  },
+    { flag:'🇲🇦', name:'Morocco',         code:'+212' },
+    { flag:'🇫🇷', name:'France',          code:'+33'  },
+    { flag:'🇩🇪', name:'Germany',         code:'+49'  },
+    { flag:'🇮🇹', name:'Italy',           code:'+39'  },
+    { flag:'🇪🇸', name:'Spain',           code:'+34'  },
+    { flag:'🇧🇷', name:'Brazil',          code:'+55'  },
+    { flag:'🇦🇺', name:'Australia',       code:'+61'  },
+    { flag:'🇮🇳', name:'India',           code:'+91'  },
+    { flag:'🇨🇳', name:'China',           code:'+86'  },
+    { flag:'🇯🇵', name:'Japan',           code:'+81'  },
+    { flag:'🇷🇺', name:'Russia',          code:'+7'   },
+    { flag:'🇸🇦', name:'Saudi Arabia',    code:'+966' },
+    { flag:'🇦🇪', name:'UAE',             code:'+971' },
+  ];
+
+  (function buildCpDropdown() {
+    const drop = document.getElementById('cpDropdown');
+    if (!drop) return;
+    drop.innerHTML = CP_COUNTRIES.map((c, i) => `
+      <div class="cp-option${i === 0 ? ' active' : ''}" onclick="cpSelect(${i})">
+        <span class="cp-flag">${c.flag}</span>
+        <span class="cp-oname">${c.name}</span>
+        <span class="cp-ocode">${c.code}</span>
+      </div>`).join('');
+  })();
+
+  function cpToggle() {
+    const trigger  = document.getElementById('cpTrigger');
+    const dropdown = document.getElementById('cpDropdown');
+    const isOpen   = dropdown.classList.contains('open');
+    trigger.classList.toggle('open', !isOpen);
+    dropdown.classList.toggle('open', !isOpen);
+  }
+
+  function cpSelect(idx) {
+    const c = CP_COUNTRIES[idx];
+    document.getElementById('bPhoneCode').value = c.code;
+    document.getElementById('cpFlag').textContent = c.flag;
+    document.getElementById('cpName').textContent = c.name;
+    document.getElementById('cpCode').textContent = c.code;
+    document.querySelectorAll('.cp-option').forEach((el, i) =>
+      el.classList.toggle('active', i === idx));
+    document.getElementById('cpTrigger').classList.remove('open');
+    document.getElementById('cpDropdown').classList.remove('open');
+  }
+
+  // Close picker when clicking outside
+  document.addEventListener('click', e => {
+    const wrap = document.getElementById('cpWrap');
+    if (wrap && !wrap.contains(e.target)) {
+      document.getElementById('cpTrigger').classList.remove('open');
+      document.getElementById('cpDropdown').classList.remove('open');
+    }
+  });
+
   function bmFormatCard(el) {
-    let v = el.value.replace(/\D/g,'').substring(0,16);
-    el.value = v.replace(/(\d{4})(?=\d)/g,'$1 ');
+    let v = el.value.replace(/\D/g, '').substring(0, 16);
+    el.value = v.replace(/(.{4})/g, '$1 ').trim();
   }
 
   function bmFormatExpiry(el) {
-    let v = el.value.replace(/\D/g,'').substring(0,4);
-    if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2);
+    let v = el.value.replace(/\D/g, '').substring(0, 4);
+    if (v.length >= 3) v = v.substring(0, 2) + '/' + v.substring(2);
     el.value = v;
+  }
+
+  function printReceipt() {
+    const d = bmBookingData;
+    const name       = (d.firstName || '') + ' ' + (d.lastName || '');
+    const travelDate = d.date ? new Date(d.date).toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' }) : '—';
+    const issued     = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+    const tourType   = document.getElementById('bTourType') ? document.getElementById('bTourType').value : '—';
+    const total      = d.total && d.total !== 'TBD' ? '$' + d.total : (d.total || '—');
+    const logoURL    = 'https://res.cloudinary.com/duokkf6tl/image/upload/v1773628247/logo_nhdd5o.png';
+
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Receipt – ${d.ref || 'GT-000000'}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Jost',sans-serif;background:#f4f4f4;display:flex;flex-direction:column;align-items:center;padding:32px 16px 60px;color:#1a1a1a;}
+    .receipt{background:#fff;width:100%;max-width:620px;box-shadow:0 4px 32px rgba(0,0,0,.12);}
+    /* Ghana stripe */
+    .flag-stripe{display:flex;height:8px;}
+    .flag-stripe span:nth-child(1){flex:1;background:#CE1126;}
+    .flag-stripe span:nth-child(2){flex:1;background:#FCD116;}
+    .flag-stripe span:nth-child(3){flex:1;background:#006B3F;}
+    /* Header */
+    .rec-header{display:flex;justify-content:space-between;align-items:center;padding:28px 32px 20px;border-bottom:1px solid #e5e5e5;}
+    .brand{display:flex;align-items:center;gap:14px;}
+    .brand-logo{width:60px;height:60px;border-radius:50%;border:3px solid #003366;object-fit:cover;padding:3px;background:#fff;}
+    .brand-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#003366;line-height:1.1;}
+    .brand-sub{font-size:11px;font-weight:600;color:#FF4DA6;text-transform:uppercase;letter-spacing:0.5px;}
+    .rec-meta{text-align:right;}
+    .rec-meta .label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:4px;}
+    .rec-meta .ref{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#006B3F;}
+    .rec-meta .issued{font-size:11px;color:#999;margin-top:2px;}
+    /* Stamp */
+    .stamp-wrap{padding:20px 32px 0;display:flex;align-items:center;gap:12px;}
+    .stamp{display:inline-block;border:2px solid #006B3F;color:#006B3F;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;}
+    /* Body */
+    .rec-body{padding:20px 32px 28px;}
+    .rec-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:4px;}
+    .rec-subtitle{font-size:12px;color:#666;margin-bottom:20px;}
+    table{width:100%;border-collapse:collapse;}
+    table tr td{padding:10px 14px;font-size:13px;border-bottom:1px solid #f5f5f5;}
+    table tr td:first-child{color:#666;width:42%;}
+    table tr td:last-child{font-weight:600;}
+    .total-row td{border-bottom:none!important;padding-top:16px!important;background:#FFFBEA;}
+    .total-row td:first-child{font-weight:700;font-size:13px;color:#1a1a1a!important;padding-left:14px;}
+    .total-row td:last-child{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#CE1126!important;padding-right:14px;}
+    /* Footer */
+    .rec-footer{border-top:1px solid #e5e5e5;padding:18px 32px;text-align:center;font-size:11px;color:#999;line-height:1.9;}
+    /* Print button */
+    .action-bar{width:100%;max-width:620px;display:flex;gap:12px;margin-top:20px;}
+    .btn-pdf{flex:1;padding:14px;background:#006B3F;color:#fff;font-family:'Jost',sans-serif;font-size:.9rem;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
+    .btn-pdf:hover{background:#14512B;}
+    .btn-close{flex:1;padding:14px;background:#CE1126;color:#fff;font-family:'Jost',sans-serif;font-size:.9rem;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
+    .btn-close:hover{background:#a50e1e;}
+    @media print{
+      body{background:#fff;padding:0;}
+      .action-bar{display:none;}
+      .receipt{box-shadow:none;}
+    }
+  </style>
+</head>
+<body>
+  <div class="receipt">
+    <div class="flag-stripe"><span></span><span></span><span></span></div>
+    <div class="rec-header">
+      <div class="brand">
+        <img class="brand-logo" src="${logoURL}" alt="Wi-Ann Logo">
+        <div>
+          <div class="brand-name">WI-ANN</div>
+          <div class="brand-sub">Travel &amp; Tour</div>
+        </div>
+      </div>
+      <div class="rec-meta">
+        <div class="label">Booking Receipt</div>
+        <div class="ref">${d.ref || 'GT-000000'}</div>
+        <div class="issued">Issued: ${issued}</div>
+      </div>
+    </div>
+    <div class="stamp-wrap">
+      <div class="stamp">✔ Payment Confirmed</div>
+    </div>
+    <div class="rec-body">
+      <div class="rec-title">Tour Booking Confirmation</div>
+      <div class="rec-subtitle">Please keep this receipt for your records.</div>
+      <table>
+        <tr><td>Guest Name</td><td>${name}</td></tr>
+        <tr><td>Email</td><td>${d.email || '—'}</td></tr>
+        <tr><td>Phone</td><td>${d.phone || '—'}</td></tr>
+        <tr><td>Tour</td><td>${d.tourName || '—'}</td></tr>
+        <tr><td>Travel Date</td><td>${travelDate}</td></tr>
+        <tr><td>Participants</td><td>${d.participants ? d.participants + ' person' + (d.participants > 1 ? 's' : '') : '—'}</td></tr>
+        <tr><td>Tour Type</td><td>${tourType}</td></tr>
+        <tr><td>Payment Method</td><td>${d.payMethod || '—'}</td></tr>
+        <tr class="total-row"><td>Amount Paid</td><td>${total}</td></tr>
+      </table>
+    </div>
+    <div class="rec-footer">
+      Wi-Ann Travel &amp; Tour &nbsp;|&nbsp; info@wi-anntravel.com<br>
+      +233 053 941 8949 &nbsp;/&nbsp; +233 020 565 2929<br>
+      Licensed Tour Operator &nbsp;|&nbsp; Accra, Ghana<br>
+      Thank you for choosing Wi-Ann Travel &amp; Tour. <strong>Akwaaba!</strong> 🌍
+    </div>
+  </div>
+  <div class="action-bar">
+    <button class="btn-pdf" onclick="window.print()">🖨 Save as PDF / Print</button>
+    <button class="btn-close" onclick="window.close()">✕ Close</button>
+  </div>
+</body>
+</html>`;
+
+    const win = window.open('', '_blank');
+    if (!win) { alert('Please allow pop-ups for this site to open your receipt.'); return; }
+    win.document.write(html);
+    win.document.close();
+  }
+</script>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script>
+  /* ── BACK TO TOP ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  /* ── SCROLL FADE-IN ── */
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => fadeObserver.observe(el));
+
+  /* ── FAQ TOGGLE ── */
+  function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-question.open').forEach(q => q.classList.remove('open'));
+    if (!isOpen) { answer.classList.add('open'); el.classList.add('open'); }
   }
 </script>
 </body>
