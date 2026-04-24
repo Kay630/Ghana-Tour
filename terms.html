@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpg" href="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628247/logo_nhdd5o.png">
+<title>Terms & Conditions · Privacy Policy — Wi-Ann Travel & Tour</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:    #CE1126;
+    --green:  #006B3F;
+    --gold:   #FCD116;
+    --dark:   #1a1a1a;
+    --text:   #333;
+    --muted:  #666;
+    --light:  #f8f8f8;
+    --white:  #fff;
+    --border: #e5e5e5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); }
+
+  /* ── GHANA STRIPE ── */
+  .flag-stripe { display: flex; height: 6px; width: 100%; }
+  .flag-stripe span:nth-child(1) { flex: 1; background: var(--red); }
+  .flag-stripe span:nth-child(2) { flex: 1; background: var(--gold); }
+  .flag-stripe span:nth-child(3) { flex: 1; background: var(--green); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg, #CE1126 33.3%, #FCD116 33.3% 66.6%, #006B3F 66.6%) 1;
+    padding: 0 6%;
+    display: flex; align-items: center; gap: 20px;
+    height: 72px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 52px; width: 52px; border-radius: 50%; border: 3px solid #003366; object-fit: cover; padding: 4px; }
+  .nav-logo-name { font-size: 22px; font-weight: 900; color: #003366; text-transform: uppercase; display: block; font-family: 'Cormorant Garamond', serif; line-height: 1; }
+  .nav-logo-sub { font-size: 13px; font-weight: 600; color: #FF4DA6; text-transform: uppercase; display: block; margin-top: 3px; font-family: 'Jost', sans-serif; }
+  .nav-back {
+    margin-left: auto;
+    display: inline-flex; align-items: center; gap: 7px;
+    color: var(--green); font-size: 0.82rem; font-weight: 600;
+    text-decoration: none; letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--red); }
+  .nav-back svg { transition: transform 0.2s; }
+  .nav-back:hover svg { transform: translateX(-3px); }
+
+  /* ── HERO BANNER ── */
+  .page-hero {
+    background: linear-gradient(135deg, #003366 0%, #006B3F 60%, #1a1a1a 100%);
+    padding: 64px 6% 52px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  }
+  .page-hero-inner { position: relative; z-index: 1; max-width: 780px; }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  }
+  .page-hero-eyebrow span { width: 28px; height: 2px; background: var(--gold); display: inline-block; }
+  .page-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; color: #fff; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .page-hero p { font-size: 0.9rem; color: rgba(255,255,255,0.72); line-height: 1.8; max-width: 560px; }
+  .page-hero-tabs {
+    display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+  }
+  .hero-tab {
+    padding: 9px 22px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+    text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.75); transition: all 0.2s; cursor: pointer;
+  }
+  .hero-tab:hover, .hero-tab.active {
+    background: var(--gold); color: var(--dark);
+    border-color: var(--gold);
+  }
+
+  /* ── LAYOUT ── */
+  .page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 6% 80px;
+  }
+
+  /* ── STICKY SIDEBAR ── */
+  .sidebar {
+    padding: 48px 32px 48px 0;
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+  .sidebar-section { margin-bottom: 32px; }
+  .sidebar-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+  .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .sidebar-nav a {
+    font-size: 0.82rem; color: var(--muted);
+    text-decoration: none; padding: 6px 10px;
+    display: block; border-left: 2px solid transparent;
+    transition: all 0.2s; line-height: 1.4;
+  }
+  .sidebar-nav a:hover { color: var(--green); border-left-color: var(--green); background: rgba(0,107,63,0.04); }
+  .sidebar-nav a.active { color: var(--green); border-left-color: var(--green); font-weight: 600; }
+  .sidebar-updated {
+    font-size: 0.72rem; color: var(--muted); line-height: 1.6;
+    background: var(--light); padding: 12px 14px; border-left: 3px solid var(--gold);
+  }
+  .sidebar-updated strong { display: block; color: var(--dark); margin-bottom: 2px; }
+
+  /* ── CONTENT ── */
+  .content { padding: 48px 0 48px 48px; }
+  .doc-section { margin-bottom: 56px; scroll-margin-top: 32px; }
+  .doc-section-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 24px; padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .doc-section-num {
+    width: 36px; height: 36px; background: var(--green); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem; font-weight: 700; flex-shrink: 0;
+    clip-path: polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);
+  }
+  .doc-section-num.red { background: var(--red); }
+  .doc-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem; font-weight: 700; color: var(--dark);
+  }
+  .doc-section p { font-size: 0.9rem; color: var(--muted); line-height: 1.9; margin-bottom: 14px; }
+  .doc-section p:last-child { margin-bottom: 0; }
+  .doc-section ul, .doc-section ol {
+    padding-left: 0; list-style: none; margin-bottom: 14px;
+  }
+  .doc-section ul li, .doc-section ol li {
+    font-size: 0.9rem; color: var(--muted); line-height: 1.85;
+    padding: 6px 0 6px 22px; position: relative;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .doc-section ul li::before {
+    content: '▸'; color: var(--green); position: absolute; left: 0; top: 7px; font-size: 0.72rem;
+  }
+  .doc-section ol { counter-reset: list; }
+  .doc-section ol li { counter-increment: list; }
+  .doc-section ol li::before {
+    content: counter(list);
+    position: absolute; left: 0; top: 6px;
+    width: 18px; height: 18px; background: var(--green); color: #fff;
+    font-size: 0.65rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .doc-section strong { color: var(--dark); font-weight: 600; }
+  .highlight-box {
+    background: #FFFBEA; border: 1px solid #e5d8a0;
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px; margin: 16px 0;
+    font-size: 0.87rem; color: var(--muted); line-height: 1.8;
+  }
+  .highlight-box strong { color: var(--dark); }
+  .info-box {
+    background: rgba(0,107,63,0.05); border: 1px solid rgba(0,107,63,0.2);
+    border-left: 4px solid var(--green);
+    padding: 16px 20px; margin: 16px 0;
+    font-size: 0.87rem; color: var(--muted); line-height: 1.8;
+  }
+  .info-box strong { color: var(--green); }
+
+  /* ── DIVIDER ── */
+  .doc-divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 64px 0 56px;
+  }
+  .doc-divider-line { flex: 1; height: 1px; background: var(--border); }
+  .doc-divider-icon {
+    font-size: 1.4rem;
+    width: 48px; height: 48px; border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+  }
+
+  /* ── CONTACT CALLOUT ── */
+  .contact-callout {
+    background: linear-gradient(135deg, #003366 0%, #006B3F 100%);
+    padding: 36px 40px; margin-top: 48px;
+    display: flex; align-items: center; gap: 32px;
+    flex-wrap: wrap;
+  }
+  .contact-callout-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 6px;
+  }
+  .contact-callout-text p { font-size: 0.84rem; color: rgba(255,255,255,0.75); line-height: 1.7; }
+  .contact-callout-links { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; margin-left: auto; }
+  .contact-callout-links a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px; font-size: 0.82rem; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-callout-primary { background: var(--gold); color: var(--dark); }
+  .btn-callout-primary:hover { background: #e6c100; }
+  .btn-callout-secondary { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.85); }
+  .btn-callout-secondary:hover { border-color: #fff; color: #fff; }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    background: var(--dark); color: rgba(255,255,255,0.55);
+    padding: 24px 6%; text-align: center; font-size: 0.78rem; line-height: 1.8;
+  }
+  .page-footer a { color: var(--gold); text-decoration: none; }
+  .page-footer a:hover { text-decoration: underline; }
+
+  /* ── BACK TO TOP ── */
+  #backToTop {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 44px; height: 44px; background: var(--green);
+    color: #fff; border: none; cursor: pointer; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transform: translateY(10px); transition: all 0.3s;
+    z-index: 500;
+  }
+  #backToTop.visible { opacity: 1; transform: translateY(0); }
+  #backToTop:hover { background: #14512B; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .content { padding: 32px 0; }
+    .page-hero { padding: 40px 5% 36px; }
+    .page-layout { padding: 0 5% 60px; }
+    nav { padding: 0 5%; }
+    .contact-callout { flex-direction: column; gap: 20px; }
+    .contact-callout-links { margin-left: 0; width: 100%; }
+    .contact-callout-links a { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="flag-stripe"><span></span><span></span><span></span></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628247/logo_nhdd5o.png" alt="Wi-Ann Logo">
+    <span>
+      <span class="nav-logo-name">Wi-Ann</span>
+      <span class="nav-logo-sub">Travel &amp; Tour</span>
+    </span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow"><span></span> Legal Documents <span></span></div>
+    <h1>Terms &amp; Conditions<br>and Privacy Policy</h1>
+    <p>Please read these carefully before booking with Wi-Ann Travel &amp; Tour. By using our services, you agree to these terms.</p>
+    <div class="page-hero-tabs">
+      <a href="#terms" class="hero-tab active">Terms &amp; Conditions</a>
+      <a href="#privacy" class="hero-tab">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="page-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Terms &amp; Conditions</div>
+      <ul class="sidebar-nav">
+        <li><a href="#terms">Overview</a></li>
+        <li><a href="#bookings">1. Bookings &amp; Reservations</a></li>
+        <li><a href="#payments">2. Payments &amp; Pricing</a></li>
+        <li><a href="#cancellations">3. Cancellations &amp; Refunds</a></li>
+        <li><a href="#conduct">4. Traveller Conduct</a></li>
+        <li><a href="#liability">5. Liability</a></li>
+        <li><a href="#changes">6. Itinerary Changes</a></li>
+        <li><a href="#disputes">7. Disputes</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Privacy Policy</div>
+      <ul class="sidebar-nav">
+        <li><a href="#privacy">Overview</a></li>
+        <li><a href="#data-collected">8. Data We Collect</a></li>
+        <li><a href="#data-use">9. How We Use It</a></li>
+        <li><a href="#data-sharing">10. Sharing &amp; Third Parties</a></li>
+        <li><a href="#your-rights">11. Your Rights</a></li>
+        <li><a href="#cookies">12. Cookies</a></li>
+        <li><a href="#security">13. Data Security</a></li>
+        <li><a href="#contact-privacy">14. Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-updated">
+      <strong>Last Updated</strong>
+      April 2025
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- ══════════════════ TERMS & CONDITIONS ══════════════════ -->
+    <div id="terms" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">T</div>
+        <h2>Terms &amp; Conditions</h2>
+      </div>
+      <p>These Terms and Conditions ("Terms") govern your use of Wi-Ann Travel &amp; Tour's services, website, and booking systems. By making a booking or enquiry, you confirm that you have read, understood, and agree to be bound by these Terms on behalf of yourself and all members of your travel party.</p>
+      <div class="highlight-box">
+        <strong>Important:</strong> Wi-Ann Travel &amp; Tour is a licensed Ghanaian tour operator. These Terms are governed by the laws of the Republic of Ghana.
+      </div>
+    </div>
+
+    <div id="bookings" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">1</div>
+        <h2>Bookings &amp; Reservations</h2>
+      </div>
+      <p>A booking is confirmed once Wi-Ann Travel &amp; Tour has received the required deposit and issued a written confirmation with a booking reference number.</p>
+      <ul>
+        <li>All bookings are subject to availability at the time of confirmation.</li>
+        <li>The lead traveller must be at least 18 years of age and is responsible for all members of the party.</li>
+        <li>It is your responsibility to ensure all travel documents (passport, visa, vaccination certificates) are valid and up to date.</li>
+        <li>Special requests (dietary requirements, accessibility needs, room preferences) must be communicated at time of booking. While we will make every reasonable effort, these cannot be guaranteed.</li>
+        <li>Bookings made online are provisional until confirmed in writing by our team, typically within 24 hours.</li>
+      </ul>
+    </div>
+
+    <div id="payments" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">2</div>
+        <h2>Payments &amp; Pricing</h2>
+      </div>
+      <p>All prices are quoted in US Dollars (USD) unless otherwise stated. Prices include the services specified in the tour itinerary and exclude items listed as optional or personal expenses.</p>
+      <ul>
+        <li><strong>Deposit:</strong> A non-refundable deposit of 30% is required to secure your booking.</li>
+        <li><strong>Full Payment:</strong> The remaining balance is due at least 14 days before the tour departure date.</li>
+        <li><strong>Group Tours:</strong> Full payment may be required at time of booking for certain group tour packages — this will be specified in the tour listing.</li>
+        <li><strong>Payment Methods:</strong> We accept bank transfers, card payments (Visa, Mastercard), and mobile money (MTN, Vodafone Cash, AirtelTigo). Bank transfer details will be provided upon booking confirmation.</li>
+        <li><strong>Price Changes:</strong> Prices are locked once a deposit has been paid. However, increases may apply for fuel surcharges, government taxes, or currency fluctuations and you will be notified promptly.</li>
+      </ul>
+      <div class="info-box">
+        <strong>Tip:</strong> Booking at least 3 weeks in advance secures the best available pricing and availability.
+      </div>
+    </div>
+
+    <div id="cancellations" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">3</div>
+        <h2>Cancellations &amp; Refunds</h2>
+      </div>
+      <p>Cancellations must be submitted in writing to <a href="mailto:info@wi-anntravel.com" style="color:var(--green)">info@wi-anntravel.com</a>. The following cancellation and refund policy applies:</p>
+      <ul>
+        <li><strong>90 days or more before the tour:</strong> Full refund of the booking amount.</li>
+        <li><strong>42–89 days before the tour:</strong> 50% refund of the booking amount.</li>
+        <li><strong>Less than 30 days before the tour:</strong> No refund will be issued.</li>
+        <li><strong>Refund Processing:</strong> Approved refunds are returned to the original payment method within 7–10 business days.</li>
+        <li><strong>Bank &amp; Card Fees:</strong> Customers are responsible for any bank or card issuer fees that may apply during refund processing.</li>
+      </ul>
+      <p>Wi-Ann Travel &amp; Tour strongly recommends purchasing comprehensive travel insurance that covers cancellation costs, medical expenses, and personal belongings.</p>
+      <p>If Wi-Ann Travel &amp; Tour cancels a tour due to circumstances within our control, a full refund or alternative date will be offered. We are not liable for cancellations caused by force majeure events (natural disasters, government orders, pandemics, etc.).</p>
+    </div>
+
+    <div id="conduct" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">4</div>
+        <h2>Traveller Conduct</h2>
+      </div>
+      <p>We expect all travellers to treat our guides, staff, local communities, and fellow travellers with respect. Wi-Ann Travel &amp; Tour reserves the right to remove any traveller from a tour without refund if their behaviour is deemed disruptive, offensive, or a risk to others.</p>
+      <ul>
+        <li>Consumption of excessive alcohol or illegal substances during tours is prohibited.</li>
+        <li>Photography at sacred or restricted sites must follow posted guidelines and guide instructions.</li>
+        <li>Littering or damage to natural or cultural heritage sites may result in removal from the tour and/or legal liability.</li>
+      </ul>
+    </div>
+
+    <div id="liability" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">5</div>
+        <h2>Liability</h2>
+      </div>
+      <p>Wi-Ann Travel &amp; Tour acts as a tour operator and facilitates services provided by third-party suppliers (hotels, transport providers, activity operators). While we exercise reasonable care in selecting partners, we cannot be held liable for acts or omissions of third parties beyond our direct control.</p>
+      <ul>
+        <li>We are not liable for personal injury, illness, death, or property loss unless caused by our negligence.</li>
+        <li>Travellers participate in all activities at their own risk. Medical conditions must be declared prior to booking.</li>
+        <li>Our total liability, in all circumstances, shall not exceed the total price paid for the tour.</li>
+      </ul>
+    </div>
+
+    <div id="changes" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">6</div>
+        <h2>Itinerary Changes</h2>
+      </div>
+      <p>While every effort is made to deliver the published itinerary, certain factors — weather, road conditions, park access, local events — may require adjustments.</p>
+      <ul>
+        <li>Minor itinerary changes (order of activities, accommodation equivalent) will not entitle travellers to a refund.</li>
+        <li>Significant changes will be communicated as early as possible, with alternatives offered where feasible.</li>
+        <li>Wi-Ann Travel &amp; Tour reserves the right to substitute guides or vehicles of equivalent or superior quality.</li>
+      </ul>
+    </div>
+
+    <div id="disputes" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num">7</div>
+        <h2>Disputes &amp; Governing Law</h2>
+      </div>
+      <p>These Terms are governed by and construed in accordance with the laws of the Republic of Ghana. Any disputes arising from these Terms or your booking shall first be subject to good-faith mediation. If unresolved, disputes shall be submitted to the courts of Ghana.</p>
+      <p>Complaints must be raised in writing within 14 days of the tour's completion to receive consideration.</p>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="doc-divider">
+      <div class="doc-divider-line"></div>
+      <div class="doc-divider-icon">🔒</div>
+      <div class="doc-divider-line"></div>
+    </div>
+
+    <!-- ══════════════════ PRIVACY POLICY ══════════════════ -->
+    <div id="privacy" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">P</div>
+        <h2>Privacy Policy</h2>
+      </div>
+      <p>Wi-Ann Travel &amp; Tour ("we", "us", "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and share your data when you interact with our website or book our services.</p>
+      <div class="highlight-box">
+        <strong>Summary:</strong> We only collect data we need to process your booking and improve your experience. We do not sell your personal data to third parties.
+      </div>
+    </div>
+
+    <div id="data-collected" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">8</div>
+        <h2>Data We Collect</h2>
+      </div>
+      <p>We collect information you provide to us and information gathered automatically during your use of our website:</p>
+      <ul>
+        <li><strong>Identity &amp; Contact:</strong> Full name, email address, phone number, nationality.</li>
+        <li><strong>Booking Details:</strong> Tour preferences, travel dates, number of participants, special requirements.</li>
+        <li><strong>Payment Information:</strong> Card details (processed securely; we do not store full card numbers) or mobile money number.</li>
+        <li><strong>Correspondence:</strong> Emails, enquiry forms, and messages you send us.</li>
+        <li><strong>Technical Data:</strong> IP address, browser type, pages visited, and session duration (via cookies and analytics tools).</li>
+      </ul>
+    </div>
+
+    <div id="data-use" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">9</div>
+        <h2>How We Use Your Data</h2>
+      </div>
+      <p>We use your personal information for the following purposes:</p>
+      <ol>
+        <li>Processing and confirming your tour bookings.</li>
+        <li>Communicating booking updates, itinerary details, and receipts.</li>
+        <li>Responding to enquiries and providing customer support.</li>
+        <li>Sending promotional offers and newsletters (only with your consent).</li>
+        <li>Improving our website experience and tour offerings.</li>
+        <li>Meeting legal and regulatory obligations.</li>
+      </ol>
+      <div class="info-box">
+        <strong>Marketing Opt-Out:</strong> You can unsubscribe from promotional emails at any time by clicking "Unsubscribe" in any email or contacting us directly.
+      </div>
+    </div>
+
+    <div id="data-sharing" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">10</div>
+        <h2>Sharing &amp; Third Parties</h2>
+      </div>
+      <p>We do not sell or rent your personal data. We may share limited data with:</p>
+      <ul>
+        <li><strong>Service Providers:</strong> Hotels, transport partners, and activity operators — only what is necessary to fulfil your booking.</li>
+        <li><strong>Payment Processors:</strong> Secure payment platforms for processing transactions.</li>
+        <li><strong>Analytics Tools:</strong> Aggregate, anonymised usage data for website improvement.</li>
+        <li><strong>Legal Authorities:</strong> Where required by Ghanaian law or court order.</li>
+      </ul>
+      <p>All third-party partners are required to handle your data in accordance with applicable data protection laws.</p>
+    </div>
+
+    <div id="your-rights" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">11</div>
+        <h2>Your Rights</h2>
+      </div>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> the personal data we hold about you.</li>
+        <li><strong>Correct</strong> inaccurate or incomplete information.</li>
+        <li><strong>Delete</strong> your data, subject to legal retention requirements.</li>
+        <li><strong>Object</strong> to processing for marketing purposes at any time.</li>
+        <li><strong>Withdraw Consent</strong> where processing is based on consent.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:info@wi-anntravel.com" style="color:var(--green);font-weight:600;">info@wi-anntravel.com</a>. We will respond within 14 working days.</p>
+    </div>
+
+    <div id="cookies" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">12</div>
+        <h2>Cookies</h2>
+      </div>
+      <p>Our website uses cookies to improve your browsing experience. Cookies are small text files stored on your device. We use:</p>
+      <ul>
+        <li><strong>Essential Cookies:</strong> Required for the website to function correctly (e.g., booking session data).</li>
+        <li><strong>Analytics Cookies:</strong> To understand how visitors use our site (e.g., Google Analytics — anonymised).</li>
+        <li><strong>Preference Cookies:</strong> To remember settings such as language preferences.</li>
+      </ul>
+      <p>You can control cookies through your browser settings. Disabling essential cookies may affect website functionality.</p>
+    </div>
+
+    <div id="security" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">13</div>
+        <h2>Data Security</h2>
+      </div>
+      <p>We take your data security seriously. Our website uses 256-bit SSL encryption for all data transmission. Payment information is processed through secure, PCI-compliant payment processors and is not stored on our servers beyond what is required for transaction records.</p>
+      <p>Despite our efforts, no internet transmission is completely secure. We encourage you to protect your own account credentials and notify us immediately if you suspect any unauthorised use of your data.</p>
+      <p>We retain your personal data for as long as necessary to fulfil the purposes outlined in this policy, or as required by law. Booking records are retained for a minimum of 5 years for accounting and legal purposes.</p>
+    </div>
+
+    <div id="contact-privacy" class="doc-section">
+      <div class="doc-section-header">
+        <div class="doc-section-num red">14</div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests relating to these Terms &amp; Conditions or our Privacy Policy, please reach out:</p>
+      <div class="contact-callout">
+        <div class="contact-callout-text">
+          <h3>Get in Touch</h3>
+          <p>Our team is available Mon–Sat, 8am–6pm GMT. We respond to all enquiries within 24 hours.</p>
+          <p style="margin-top:8px; font-size:0.8rem;">📍 Accra, Ghana &nbsp;·&nbsp; 📞 +233 053 941 8949 &nbsp;/&nbsp; +233 020 565 2929</p>
+        </div>
+        <div class="contact-callout-links">
+          <a href="mailto:info@wi-anntravel.com" class="btn-callout-primary">
+            ✉ Email Us
+          </a>
+          <a href="index.html#contact" class="btn-callout-secondary">
+            ↩ Back to Site
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <div class="flag-stripe" style="margin-bottom:16px;"><span></span><span></span><span></span></div>
+  © 2025 Wi-Ann Travel &amp; Tour. All rights reserved. &nbsp;|&nbsp; Accra, Ghana &nbsp;|&nbsp;
+  <a href="index.html">Home</a> &nbsp;·&nbsp;
+  <a href="index.html#upcoming">Tours</a> &nbsp;·&nbsp;
+  <a href="mailto:info@wi-anntravel.com">info@wi-anntravel.com</a>
+</div>
+
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  // Back to top
+  window.addEventListener('scroll', () => {
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Sidebar active link highlight on scroll
+  const sections = document.querySelectorAll('.doc-section[id]');
+  const sideLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        sideLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-20% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  // Hero tab active state
+  document.querySelectorAll('.hero-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

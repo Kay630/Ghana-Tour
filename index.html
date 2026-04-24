@@ -451,8 +451,8 @@
     .nav-links.open a { border-bottom: 1px solid var(--border); padding-bottom: 12px; }
     section { padding: 48px 5%; }
     #hero { padding: 0 5%; }
-    .hero-title { font-size: clamp(1.9rem, 7vw, 2.6rem); margin-bottom: 24px; }
-    .dest-entry, .dest-entry.reverse { grid-template-columns: 1fr; direction: ltr; gap: 20px; margin-bottom: 40px; }
+    .hero-title { font-size: clamp(1.9rem, 7vw, 2.6rem); margin-bottom: 10px; }
+    .dest-entry, .dest-entry.reverse { grid-template-columns: 1fr; direction: ltr; gap: 10px; margin-bottom: 20px; }
     .dest-img img { height: 240px; }
     .dest-text h2 { font-size: 1.5rem; }
     .btn-outline-dark { display: block; text-align: center; }
@@ -726,12 +726,26 @@
 </nav>
 
 <!-- HERO -->
-<section id="hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.6) 100%), url('https://res.cloudinary.com/duokkf6tl/image/upload/v1773628228/12_ngynoz.png'); background-size: cover; background-position: center; height: 100vh; min-height: 600px;">
+<!-- HERO -->
+<section id="hero" style="
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+    url('https://res.cloudinary.com/duokkf6tl/image/upload/v1773628228/12_ngynoz.png');
+  background-size: cover;
+  background-position: center;
+">
   <div class="hero-content">
-    <h1 class="hero-title">If Experience Matters,<br>Travel With Us</h1>
+    <h1 class="hero-title">Akwaaba, <br>From Roots to Adventure</h1>
+    <p style="color: rgba(255,255,255,0.88); font-size: 1.4rem; margin-bottom: 32px; letter-spacing: 0.3px;">Discover Ghana's culture, coastlines, and adventure — your story begins here</p>
     <button class="btn-orange" onclick="openBookingModal()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      HELP ME PLAN NOW
+      START YOUR JOURNEY
     </button>
   </div>
 </section>
@@ -1018,7 +1032,7 @@
   <p>No two travellers are the same — and neither are our itineraries. We take time to understand your interests, schedule, and budget, then craft a Ghana travel plan that is uniquely yours. Whether you're drawn to history, nature, culture, or cuisine, our team will put together a journey that makes every day in West Africa count. Your perfect Ghana experience starts with a single step — let's plan it together.</p>
   <button class="btn-orange" onclick="openBookingModal()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    START PLAN NOW
+    START YOUR JOURNEY
   </button>
 </section>
 
@@ -1310,8 +1324,8 @@
       <span>Made with ❤️ in Ghana 🇬🇭</span>
     </div>
     <div class="footer-bottom-links">
-      <a href="#">Terms</a>
-      <a href="#">Privacy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="terms.html#privacy">Privacy Policy</a>
     </div>
     <div class="footer-dev-bar">
       <div class="footer-dev-byline">
@@ -1582,7 +1596,13 @@
           <i class="fas fa-info-circle" style="color:#1B5E35"></i> You will receive a prompt on your phone to confirm this payment.
         </p>
       </div>
-      <button class="bm-pay-btn" style="margin-top:1.5rem" onclick="processPayment()" id="processPayBtn">
+      <p style="font-size:0.75rem;color:#666;margin-top:1.5rem;margin-bottom:0.75rem;line-height:1.7;text-align:center;">
+        By proceeding you agree to our
+        <a href="terms.html" target="_blank" style="color:#006B3F;font-weight:600;text-decoration:underline;">Terms &amp; Conditions</a>
+        and
+        <a href="terms.html#privacy" target="_blank" style="color:#006B3F;font-weight:600;text-decoration:underline;">Privacy Policy</a>.
+      </p>
+      <button class="bm-pay-btn" onclick="processPayment()" id="processPayBtn">
         <i class="fas fa-lock"></i> <span id="payBtnText">Pay Now</span>
       </button>
       <p class="bm-secure-note"><i class="fas fa-shield-alt"></i> 256-bit SSL encrypted. Fully protected.</p>
