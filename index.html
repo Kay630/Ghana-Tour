@@ -95,13 +95,38 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%),
       url('https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=1600&q=90') center/cover no-repeat;
   }
-  .hero-content { text-align: center; color: white; }
+  .hero-content { text-align: center; color: white; padding: 0 20px; }
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    font-weight: 600; letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ghana-gold);
+    border: 1.5px solid rgba(252,209,22,0.5);
+    padding: 7px 20px;
+    margin-bottom: 22px;
+  }
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    font-weight: 600; line-height: 1.2;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-    margin-bottom: 32px;
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 700; line-height: 1.1;
+    text-shadow: 0 2px 28px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 36px;
+    line-height: 1.7;
+    max-width: 560px;
+    margin-left: auto; margin-right: auto;
+  }
+  .hero-divider {
+    width: 56px; height: 3px;
+    background: linear-gradient(90deg, #CE1126, #FCD116, #006B3F);
+    margin: 0 auto 32px;
   }
   .btn-orange {
     display: inline-flex; align-items: center; gap: 10px;
@@ -205,6 +230,38 @@
     transition: background 0.2s, transform 0.15s;
   }
   .btn-book-now:hover { background: #14512B; transform: translateY(-1px); }
+
+  /* ── COMING SOON CARDS ── */
+  .tour-card.coming-soon { position: relative; }
+  .tour-card.coming-soon::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.45);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .tour-card-date.coming-soon-badge {
+    background: #444;
+    letter-spacing: 1px;
+  }
+  .btn-coming-soon {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: #888; color: #fff;
+    padding: 10px 20px; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.4px; border: none; cursor: not-allowed;
+    font-family: 'Jost', sans-serif;
+  }
+
+  /* ── CATALOG BUTTON ── */
+  .btn-catalog {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--ghana-gold); color: var(--dark);
+    padding: 14px 32px; border-radius: 6px;
+    font-size: 0.875rem; font-weight: 700; letter-spacing: 0.5px;
+    border: none; cursor: pointer; transition: background 0.2s, transform 0.2s;
+    font-family: 'Jost', sans-serif; text-decoration: none;
+  }
+  .btn-catalog:hover { background: #e0b800; transform: translateY(-2px); }
   @media (max-width: 900px) { .upcoming-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 580px) { .upcoming-grid { grid-template-columns: 1fr; } }
 
@@ -451,7 +508,7 @@
     .nav-links.open a { border-bottom: 1px solid var(--border); padding-bottom: 12px; }
     section { padding: 48px 5%; }
     #hero { padding: 0 5%; }
-    .hero-title { font-size: clamp(1.9rem, 7vw, 2.6rem); margin-bottom: 10px; }
+    .hero-title { font-size: clamp(1.2rem, 7vw, 2.0rem); margin-bottom: 10px; }
     .dest-entry, .dest-entry.reverse { grid-template-columns: 1fr; direction: ltr; gap: 10px; margin-bottom: 20px; }
     .dest-img img { height: 240px; }
     .dest-text h2 { font-size: 1.5rem; }
@@ -481,7 +538,7 @@
   }
 
   @media (max-width: 480px) {
-    .hero-title { font-size: clamp(1.7rem, 6.5vw, 2.2rem); }
+    .hero-title { font-size: clamp(1.3rem, 6.5vw, 2.2rem); }
     .videos-grid { grid-template-columns: 1fr; }
     .about-imgs { grid-template-columns: 1fr; }
     .about-img-card { height: 190px; }
@@ -741,11 +798,13 @@
   background-position: center;
 ">
   <div class="hero-content">
-    <h1 class="hero-title">Akwaaba, <br>From Roots to Adventure</h1>
-    <p style="color: rgba(255,255,255,0.88); font-size: 1.4rem; margin-bottom: 32px; letter-spacing: 0.3px;">Discover Ghana's culture, coastlines, and adventure — your story begins here</p>
+    <div class="hero-eyebrow">✦ &nbsp; Akwaaba &nbsp; ✦</div>
+    <h1 class="hero-title">Your Ghana Adventure<br>Starts Here!</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Discover Ghana’s culture, coastlines, and adventure —<br>one journey that connects you forever.</p>
     <button class="btn-orange" onclick="openBookingModal()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      START YOUR JOURNEY
+      Experience Ghana Now
     </button>
   </div>
 </section>
@@ -757,7 +816,7 @@
   <!-- Ghana -->
   <div class="dest-entry">
     <div class="dest-img">
-      <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628242/4_jiwhmj.jpg" alt="Ghana – Cape Coast Castle">
+      <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628242/4_jiwhmj.jpg" alt="Ghana – Accra and Beyond.">
     </div>
     <div class="dest-text">
       <h2>Accra - Ghana </h2>
@@ -839,18 +898,18 @@
     <!-- Tour 1: Cape Coast -->
     <div class="tour-card">
       <div class="tour-card-img">
-        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628230/13_q48xc9.png" alt="Cape Coast Castle">
-        <div class="tour-card-date">📅 Apr 12, 2026</div>
+        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1777083237/Flag_of_Ghana__Meaning_Design_Cultural_Significance_yzidmk.jpg" alt="Tour 1">
+        <div class="tour-card-date">📅 Aug 12, 2026</div>
         <div class="tour-card-spots">🔥 4 spots left</div>
       </div>
       <div class="tour-card-body">
-        <div class="tour-card-title">Cape Coast Castle & Elmina</div>
+        <div class="tour-card-title">Akwaaba to Your Ghana Adventure</div>
         <div class="tour-card-meta">
-          <span><i class="fas fa-clock"></i> 2 Days</span>
+          <span><i class="fas fa-clock"></i> 7 Days</span>
           <span><i class="fas fa-users"></i> Group Tour</span>
-          <span><i class="fas fa-map-marker-alt"></i> Central Region</span>
+          <span><i class="fas fa-map-marker-alt"></i> Accra, Cape Coast</span>
         </div>
-        <p class="tour-card-desc">Walk the historic corridors of Cape Coast Castle, explore Elmina — Africa's oldest European structure — and stroll the vibrant fishing harbour.</p>
+        <p class="tour-card-desc">7 Days. 7 Unforgettable Adventures. One Journey That Connects You Forever — Ghana Awaits You.</p>
       </div>
       <div class="tour-card-footer">
         <div class="tour-card-price">$180 <small>/ person</small></div>
@@ -858,13 +917,22 @@
           <i class="fas fa-calendar-check"></i> Book Now
         </button>
       </div>
+      <div style="padding:12px 22px;border-top:1px solid var(--border);background:#fafafa;">
+        <a href="tours.html#cape-coast" style="display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-size:0.875rem;font-weight:600;text-decoration:none;">
+          
+        
+        <a class="btn-catalog" style="width:100%;justify-content:center;text-decoration:none;" href="WiAnn_Ghana_7Day_CLIENT.pdf" download="WiAnn_Ghana_7Day_Tour_Catalog.pdf">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          DOWNLOAD CATALOG
+        </a></a>
+      </div>
     </div>
 
     <!-- Tour 2: Kumasi -->
-    <div class="tour-card">
+    <div class="tour-card coming-soon">
       <div class="tour-card-img">
         <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628234/17_qnwyqo.png" alt="Kumasi Ashanti Kingdom">
-        <div class="tour-card-date">📅 Apr 26, 2026</div>
+        <div class="tour-card-date coming-soon-badge">🕐 Coming Soon</div>
         <div class="tour-card-spots">⚡ 6 spots left</div>
       </div>
       <div class="tour-card-body">
@@ -878,17 +946,17 @@
       </div>
       <div class="tour-card-footer">
         <div class="tour-card-price">$200 <small>/ person</small></div>
-        <button class="btn-book-now" onclick="openBookingModal('kumasi')">
-          <i class="fas fa-calendar-check"></i> Book Now
+        <button class="btn-coming-soon" disabled>
+          <i class="fas fa-clock"></i> Coming Soon
         </button>
       </div>
     </div>
 
     <!-- Tour 3: Volta Region -->
-    <div class="tour-card">
+    <div class="tour-card coming-soon">
       <div class="tour-card-img">
         <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1773628231/15_sqctxs.png" alt="Volta Region Wli Waterfalls">
-        <div class="tour-card-date">📅 May 10, 2026</div>
+        <div class="tour-card-date coming-soon-badge">🕐 Coming Soon</div>
         <div class="tour-card-spots">✅ 8 spots left</div>
       </div>
       <div class="tour-card-body">
@@ -902,8 +970,8 @@
       </div>
       <div class="tour-card-footer">
         <div class="tour-card-price">$160 <small>/ person</small></div>
-        <button class="btn-book-now" onclick="openBookingModal('volta')">
-          <i class="fas fa-calendar-check"></i> Book Now
+        <button class="btn-coming-soon" disabled>
+          <i class="fas fa-clock"></i> Coming Soon
         </button>
       </div>
     </div>
@@ -1032,7 +1100,7 @@
   <p>No two travellers are the same — and neither are our itineraries. We take time to understand your interests, schedule, and budget, then craft a Ghana travel plan that is uniquely yours. Whether you're drawn to history, nature, culture, or cuisine, our team will put together a journey that makes every day in West Africa count. Your perfect Ghana experience starts with a single step — let's plan it together.</p>
   <button class="btn-orange" onclick="openBookingModal()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    START YOUR JOURNEY
+    Experience Ghana Now
   </button>
 </section>
 
@@ -1473,13 +1541,10 @@
             <label>Select Tour</label>
             <select id="bTour" onchange="updateSummary()">
               <option value="">-- Choose a Tour --</option>
-              <option value="cape-coast">Cape Coast Castle & Elmina ($180)</option>
-              <option value="kakum">Kakum Canopy Walk ($120)</option>
-              <option value="accra">Accra Cultural Immersion ($95)</option>
-              <option value="kumasi">Kumasi Ashanti Kingdom ($200)</option>
-              <option value="volta">Volta Region & Wli Waterfalls ($160)</option>
-              <option value="mole">Mole National Park Safari ($350)</option>
-              <option value="full">Full Ghana Circuit (Custom)</option>
+              <option value="cape-coast">Akwaaba to Your Ghana Adventure — Aug 12 ($180)</option>
+              <option value="" disabled>─────────────────────</option>
+              <option value="" disabled>🕐 Kumasi Ashanti Kingdom — Coming Soon</option>
+              <option value="" disabled>🕐 Volta Region &amp; Wli Waterfalls — Coming Soon</option>
             </select>
             <div class="bm-error-msg" id="errTour">Please select a tour.</div>
           </div>
@@ -1639,13 +1704,7 @@
 <script>
   // Tour price map
   const tourPrices = {
-    'cape-coast': { name: 'Cape Coast Castle & Elmina', price: 180 },
-    'kakum':      { name: 'Kakum Canopy Walk', price: 120 },
-    'accra':      { name: 'Accra Cultural Immersion', price: 95 },
-    'kumasi':     { name: 'Kumasi Ashanti Kingdom', price: 200 },
-    'volta':      { name: 'Volta Region & Wli Waterfalls', price: 160 },
-    'mole':       { name: 'Mole National Park Safari', price: 350 },
-    'full':       { name: 'Full Ghana Circuit', price: null },
+    'cape-coast': { name: 'Akwaaba to Your Ghana Adventure', price: 180 },
   };
 
   let bmBookingData = {};

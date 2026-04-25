@@ -150,6 +150,26 @@
   .btn-book:hover { background: #a50e1e; transform: translateY(-1px); }
   .btn-book:disabled { background: #ccc; cursor: not-allowed; transform: none; }
 
+  /* ── COMING SOON ── */
+  .tour-card.coming-soon { position: relative; }
+  .tour-card.coming-soon::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.45);
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .tour-badge.coming-soon-badge {
+    background: #444;
+    letter-spacing: 1.2px;
+  }
+  .btn-coming-soon {
+    background: #888; color: white; border: none; border-radius: 6px;
+    padding: 11px 22px; font-family: 'Jost', sans-serif; font-size: 0.8rem;
+    font-weight: 600; letter-spacing: 0.5px; cursor: not-allowed;
+  }
+
   /* ── BOOKING MODALS ── */
   .overlay {
     position: fixed; inset: 0; background: rgba(26,8,0,.8); z-index: 2000;
@@ -375,17 +395,17 @@
     <!-- Tour 1 -->
     <div class="tour-card" data-category="cultural">
       <div class="tour-card-img">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80" alt="Accra City & Culture Tour">
+        <img src="https://res.cloudinary.com/duokkf6tl/image/upload/v1777083237/Flag_of_Ghana__Meaning_Design_Cultural_Significance_yzidmk.jpg" alt="Accra City & Culture Tour">
         <span class="tour-badge">Cultural</span>
       </div>
       <div class="tour-body">
         <div class="tour-meta">
-          <span>📅 April 12–16, 2025</span>
+          <span>📅 August 12–16, 2025</span>
           <span>⏱ 5 Days</span>
           <span>👥 Max 12</span>
         </div>
-        <div class="tour-title">Accra City & Culture Tour</div>
-        <div class="tour-desc">Dive deep into Accra's vibrant culture — from Makola Market to the National Museum, Jamestown Lighthouse, and a traditional Kente weaving demonstration.</div>
+        <div class="tour-title">Akwaaba to Your Ghana Adventure</div>
+        <div class="tour-desc">7 Days. 7 Unforgettable Adventures. One Journey That Connects You Forever — Ghana Awaits You.</div>
         <div class="tour-includes">
           <span class="tour-tag">🏨 Hotel Included</span>
           <span class="tour-tag">🍽 Meals Included</span>
@@ -394,8 +414,8 @@
         </div>
         <div class="tour-footer">
           <div class="tour-price">
-            <span class="from">FROM</span>
-            <span class="amount">$799</span>
+            <span class="from"></span>
+            <span class="amount">$180</span>
             <span class="per">/ person</span>
           </div>
           <button class="btn-book" onclick="openBookingModal('accra')">BOOK NOW</button>
@@ -404,10 +424,10 @@
     </div>
 
     <!-- Tour 2 -->
-    <div class="tour-card" data-category="historical">
+    <div class="tour-card coming-soon" data-category="historical">
       <div class="tour-card-img">
         <img src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=700&q=80" alt="Cape Coast & Slave Route">
-        <span class="tour-badge limited">Limited Spots</span>
+        <span class="tour-badge coming-soon-badge">Coming Soon</span>
       </div>
       <div class="tour-body">
         <div class="tour-meta">
@@ -425,20 +445,20 @@
         </div>
         <div class="tour-footer">
           <div class="tour-price">
-            <span class="from">FROM</span>
+            <span class="from"></span>
             <span class="amount">$899</span>
             <span class="per">/ person</span>
           </div>
-          <button class="btn-book" onclick="openBookingModal('cape-coast')">BOOK NOW</button>
+          <button class="btn-coming-soon" disabled>COMING SOON</button>
         </div>
       </div>
     </div>
 
     <!-- Tour 3 -->
-    <div class="tour-card" data-category="adventure">
+    <div class="tour-card coming-soon" data-category="adventure">
       <div class="tour-card-img">
         <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=700&q=80" alt="Volta Region Adventure">
-        <span class="tour-badge">Adventure</span>
+        <span class="tour-badge coming-soon-badge">Coming Soon</span>
       </div>
       <div class="tour-body">
         <div class="tour-meta">
@@ -456,20 +476,20 @@
         </div>
         <div class="tour-footer">
           <div class="tour-price">
-            <span class="from">FROM</span>
+            <span class="from"></span>
             <span class="amount">$950</span>
             <span class="per">/ person</span>
           </div>
-          <button class="btn-book" onclick="openBookingModal('volta')">BOOK NOW</button>
+          <button class="btn-coming-soon" disabled>COMING SOON</button>
         </div>
       </div>
     </div>
 
     <!-- Tour 4 -->
-    <div class="tour-card" data-category="luxury">
+    <div class="tour-card coming-soon" data-category="luxury">
       <div class="tour-card-img">
         <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=700&q=80" alt="Luxury Ghana Circuit">
-        <span class="tour-badge">Luxury</span>
+        <span class="tour-badge coming-soon-badge">Coming Soon</span>
       </div>
       <div class="tour-body">
         <div class="tour-meta">
@@ -487,20 +507,20 @@
         </div>
         <div class="tour-footer">
           <div class="tour-price">
-            <span class="from">FROM</span>
+            <span class="from"></span>
             <span class="amount">$2,499</span>
             <span class="per">/ person</span>
           </div>
-          <button class="btn-book" onclick="openBookingModal('luxury')">BOOK NOW</button>
+          <button class="btn-coming-soon" disabled>COMING SOON</button>
         </div>
       </div>
     </div>
 
     <!-- Tour 5 -->
-    <div class="tour-card" data-category="cultural">
+    <div class="tour-card coming-soon" data-category="cultural">
       <div class="tour-card-img">
         <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80" alt="Kumasi & Ashanti Kingdom">
-        <span class="tour-badge">Cultural</span>
+        <span class="tour-badge coming-soon-badge">Coming Soon</span>
       </div>
       <div class="tour-body">
         <div class="tour-meta">
@@ -518,20 +538,20 @@
         </div>
         <div class="tour-footer">
           <div class="tour-price">
-            <span class="from">FROM</span>
+            <span class="from"></span>
             <span class="amount">$849</span>
             <span class="per">/ person</span>
           </div>
-          <button class="btn-book" onclick="openBookingModal('kumasi')">BOOK NOW</button>
+          <button class="btn-coming-soon" disabled>COMING SOON</button>
         </div>
       </div>
     </div>
 
     <!-- Tour 6 -->
-    <div class="tour-card" data-category="adventure">
+    <div class="tour-card coming-soon" data-category="adventure">
       <div class="tour-card-img">
         <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=700&q=80" alt="Mole National Park Safari">
-        <span class="tour-badge sold-out">Sold Out</span>
+        <span class="tour-badge coming-soon-badge">Coming Soon</span>
       </div>
       <div class="tour-body">
         <div class="tour-meta">
@@ -549,11 +569,11 @@
         </div>
         <div class="tour-footer">
           <div class="tour-price">
-            <span class="from">FROM</span>
+            <span class="from"></span>
             <span class="amount">$1,099</span>
             <span class="per">/ person</span>
           </div>
-          <button class="btn-book" disabled>SOLD OUT</button>
+          <button class="btn-coming-soon" disabled>COMING SOON</button>
         </div>
       </div>
     </div>
@@ -600,12 +620,10 @@
             <label>Select Tour</label>
             <select id="bTour" onchange="updateSummary()">
               <option value="">-- Choose a Tour --</option>
-              <option value="accra">Accra City &amp; Culture Tour ($799/person)</option>
-              <option value="cape-coast">Cape Coast &amp; Slave Route ($899/person)</option>
-              <option value="volta">Volta Region Adventure ($950/person)</option>
-              <option value="kumasi">Kumasi &amp; Ashanti Kingdom ($849/person)</option>
-              <option value="mole">Mole National Park Safari ($1,099/person)</option>
-              <option value="luxury">Luxury Ghana Circuit ($2,499/person)</option>
+              <option value="accra">Akwaaba to Your Ghana Adventure — Aug 12 ($180)</option>
+              <option value="" disabled>─────────────────────</option>
+              <option value="" disabled>🕐 Kumasi Ashanti Kingdom — Coming Soon</option>
+              <option value="" disabled>🕐 Volta Region &amp; Wli Waterfalls — Coming Soon</option>
             </select>
             <div class="bm-error-msg" id="errTour">Please select a tour.</div>
           </div>
@@ -859,12 +877,7 @@
 
   // ── BOOKING SYSTEM ──
   const tourPrices = {
-    'accra':      { name: 'Accra City & Culture Tour',  price: 799  },
-    'cape-coast': { name: 'Cape Coast & Slave Route',   price: 899  },
-    'volta':      { name: 'Volta Region Adventure',     price: 950  },
-    'luxury':     { name: 'Luxury Ghana Circuit',       price: 2499 },
-    'kumasi':     { name: 'Kumasi & Ashanti Kingdom',   price: 849  },
-    'mole':       { name: 'Mole National Park Safari',  price: 1099 },
+    'accra':      { name: 'Akwaaba to Your Ghana Adventure', price: 180  },
   };
 
   let bmBookingData = {};
@@ -956,6 +969,17 @@
     setTimeout(() => {
       const ref = 'GT-' + Math.random().toString(36).substr(2, 6).toUpperCase();
       bmBookingData.payMethod = bmSelectedPayMethod === 'card' ? 'Card Payment' : 'Mobile Money';
+      bmBookingData.ref = ref;
+      bmBookingData.timestamp = Date.now();
+
+      // ── PERSIST booking so index.html can reflect it ──
+      try {
+        const all = JSON.parse(localStorage.getItem('wia_bookings') || '[]');
+        all.push(bmBookingData);
+        localStorage.setItem('wia_bookings', JSON.stringify(all));
+        localStorage.setItem('wia_latest_booking', JSON.stringify(bmBookingData));
+      } catch(e) {}
+
       closeBmModal('paymentOverlay');
       document.getElementById('bookingRef').textContent = ref;
       document.getElementById('successDetails').innerHTML = `
